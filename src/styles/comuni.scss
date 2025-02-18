@@ -1,0 +1,13 @@
+$primary-h: 160;
+$primary-s: 100;
+$primary-b: 48;
+
+$header-slim-bg-color: #00402b;
+$color-text-primary-hover: hsl(160, 100%, 15%); // color-seagreen-19
+$color-text-primary-active: hsl(160, 100%, 14%); // color-seagreen-14
+$color-background-primary-lighter: hsl(160, 40, 92%); // color-seagreen-92
+// CSS variables
+:root {
+  --bs-link-hover-color: #{$color-text-primary-hover};
+}
+@import "bootstrap-italia/src/scss/bootstrap-italia";

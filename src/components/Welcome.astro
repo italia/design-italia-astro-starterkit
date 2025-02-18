@@ -1,209 +1,310 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import Video from "./Video.astro";
+const videos = [
+  {
+    src: "//vjs.zencdn.net/v/oceans.mp4",
+    type: "video/mp4",
+  },
+  {
+    src: "//vjs.zencdn.net/v/oceans.webm",
+    type: "video/webm",
+  },
+];
 ---
 
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
-			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
-					>
-				</a>
-			</section>
-		</section>
-	</main>
+<div>
+  <div
+    id='sticky'
+    class='it-header-slim-wrapper it-header-sticky'
+    data-bs-toggle='sticky'
+    data-bs-position-type='sticky'
+    data-bs-sticky-class-name='is-sticky'
+  >
+    <div class='container'>
+      <div class='row'>
+        <div class='col-12'>
+          <div class='it-header-slim-wrapper-content'>
+            <a class='d-none d-lg-block navbar-brand' href='#'
+              >Questa demo illustra l'utilizzo di Bootstrap Italia 2 utilizzando
+              il bundle della libreria</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='it-hero-wrapper it-dark it-overlay it-bottom-overlapping-content'>
+    <div class='img-responsive-wrapper'>
+      <div class='img-responsive'>
+        <div class='img-wrapper'>
+          <img
+            src='https://p0.piqsels.com/preview/590/580/957/4k-wallpaper-astronomy-constellations-environment.jpg'
+            title='img title'
+            alt='imagealt'
+          />
+        </div>
+      </div>
+    </div>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-12'>
+          <div class='it-hero-text-wrapper bg-dark'>
+            <span class='it-category'>Category</span>
+            <h1>Una semplice demo con Bootstrap Italia 2.</h1>
+            <p class='d-none d-lg-block'>
+              Platea dictumst vestibulum rhoncus est pellentesque elit
+              ullamcorper dignissim cras. Dictum sit amet justo donec enim diam
+              vulputate ut. Eu nisl nunc mi ipsum faucibus.
+            </p>
+            <div class='it-btn-container'>
+              <a class='btn btn-sm btn-secondary' href='#'>Label button</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-12'>
+        <div class='row'>
+          <Video client:visible sources={videos} />
 
-	<a href="https://astro.build/blog/astro-5/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 5.0?</h2>
-		<p>
-			From content layers to server islands, click to learn more about the new features and
-			improvements in Astro 5.0
-		</p>
-	</a>
+          <div class='card-wrapper card-space'>
+            <div class='card card-bg'>
+              <div class='card-body'>
+                <h5 class='card-title'>La città nuova, Alda Merini</h5>
+                <p class='card-text'>
+                  Ecco un <a
+                    href='#'
+                    class='ttp'
+                    title='Primo tooltip'
+                    data-bs-toggle='tooltip'>bianco scenario</a
+                  ><br />
+                  per tratteggiarvi l’accompagnamento<br />
+                  degli oggetti di sfondo che pur vivono.<br />
+                  Non ne sarò <a
+                    href='#'
+                    class='ttp'
+                    title='Secondo tooltip'
+                    data-bs-toggle='tooltip'>l’artefice</a
+                  >
+                  impaziente.<br />
+                  Berrò alle coppe della nostalgia,<br />
+                  avrò preteso d’ozio nelle lacrime...<br />
+                  perché non mi ribello alla natura:<br />
+                  la mia lentezza li esaspera...<br />
+                  La mia lentezza? No, la mia fiducia.<br />
+                  Per adesso è deserto.<br />
+                  <a
+                    href='#'
+                    class='ttp'
+                    title='Terzo tooltip'
+                    data-bs-toggle='tooltip'>Il mondo può rifarsi senza me</a
+                  >,<br />
+                  E intanto gli altri mi denigreranno
+                </p>
+                <a class='read-more' href='#'>
+                  <span class='text'>Leggi di più</span>
+                  <svg class='icon'>
+                    <use
+                      href='bootstrap-italia/dist/svg/sprites.svg#it-arrow-right'
+                    ></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='alert alert-danger' role='alert'>
+      Questo è un alert con un esempio di <a href='#' class='alert-link'>link</a
+      > evidenziato.
+    </div>
+    <div>
+      <label for='inputNumber3' class='input-number-label'>Currency</label>
+      <span class='input-number input-number-currency'>
+        <input
+          type='number'
+          data-bs-input
+          id='inputNumber3'
+          name='inputNumber3'
+          step='any'
+          value='3.50'
+          min='0'
+        />
+        <button class='input-number-add'>
+          <span class='visually-hidden'>Aumenta valore Euro</span>
+        </button>
+        <button class='input-number-sub'>
+          <span class='visually-hidden'>Diminuisci valore Euro</span>
+        </button>
+      </span>
+    </div>
+    <div
+      id='myCarousel'
+      class='it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide'
+      data-bs-carousel-splide
+    >
+      <div class='splide__track'>
+        <ul class='splide__list'>
+          <li class='splide__slide'>
+            <div class='it-single-slide-wrapper'>
+              <div class='card-wrapper'>
+                <div class='card'>
+                  <div class='card-body'>
+                    <div class='category-top'>
+                      <a class='category' href='#'>Category</a>
+                      <span class='data'>10/12/2022</span>
+                    </div>
+                    <h5 class='card-title big-heading'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit…
+                    </h5>
+                    <p class='card-text'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                    <span class='card-signature'>di Federico De Paolis</span>
+                    <a class='read-more' href='#'>
+                      <span class='text'
+                        >Leggi di più <span class='visually-hidden'
+                          >Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit…</span
+                        ></span
+                      >
+                      <svg class='icon'>
+                        <use
+                          href='bootstrap-italia/dist/svg/sprites.svg#it-arrow-right'
+                        ></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class='splide__slide'>
+            <div class='it-single-slide-wrapper'>
+              <div class='card-wrapper'>
+                <div class='card'>
+                  <div class='card-body'>
+                    <div class='category-top'>
+                      <a class='category' href='#'>Category</a>
+                      <span class='data'>10/12/2022</span>
+                    </div>
+                    <h5 class='card-title big-heading'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit…
+                    </h5>
+                    <p class='card-text'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                    <span class='card-signature'>di Federico De Paolis</span>
+                    <a class='read-more' href='#'>
+                      <span class='text'
+                        >Leggi di più <span class='visually-hidden'
+                          >Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit…</span
+                        ></span
+                      >
+                      <svg class='icon'>
+                        <use
+                          href='bootstrap-italia/dist/svg/sprites.svg#it-arrow-right'
+                        ></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class='splide__slide'>
+            <div class='it-single-slide-wrapper'>
+              <div class='card-wrapper'>
+                <div class='card'>
+                  <div class='card-body'>
+                    <div class='category-top'>
+                      <a class='category' href='#'>Category</a>
+                      <span class='data'>10/12/2022</span>
+                    </div>
+                    <h5 class='card-title big-heading'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit…
+                    </h5>
+                    <p class='card-text'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                    <span class='card-signature'>di Federico De Paolis</span>
+                    <a class='read-more' href='#'>
+                      <span class='text'
+                        >Leggi di più <span class='visually-hidden'
+                          >Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit…</span
+                        ></span
+                      >
+                      <svg class='icon'>
+                        <use
+                          href='bootstrap-italia/dist/svg/sprites.svg#it-arrow-right'
+                        ></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class='splide__slide'>
+            <div class='it-single-slide-wrapper'>
+              <div class='card-wrapper'>
+                <div class='card'>
+                  <div class='card-body'>
+                    <div class='category-top'>
+                      <a class='category' href='#'>Category</a>
+                      <span class='data'>10/12/2022</span>
+                    </div>
+                    <h5 class='card-title big-heading'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit…
+                    </h5>
+                    <p class='card-text'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </p>
+                    <span class='card-signature'>di Federico De Paolis</span>
+                    <a class='read-more' href='#'>
+                      <span class='text'
+                        >Leggi di più <span class='visually-hidden'
+                          >Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit…</span
+                        ></span
+                      >
+                      <svg class='icon'>
+                        <use
+                          href='bootstrap-italia/dist/svg/sprites.svg#it-arrow-right'
+                        ></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <a
+      href='#'
+      aria-hidden='true'
+      data-bs-toggle='backtotop'
+      class='back-to-top back-to-top-small'
+    >
+      <svg class='icon icon-light'>
+        <use href='bootstrap-italia/dist/svg/sprites.svg#it-arrow-up'></use>
+      </svg>
+    </a>
+  </div>
 </div>
-
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
-
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
-
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
-
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
-
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
-
-	#links {
-		display: flex;
-		gap: 16px;
-	}
-
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
-
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
-
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
-
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
-
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
-
-	pre {
-		font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
-			'DejaVu Sans Mono', monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
-
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
-
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-</style>

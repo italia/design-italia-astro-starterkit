@@ -1,0 +1,44 @@
+---
+const { sources } = Astro.props;
+let options = Astro.props.options || {
+  controls: true,
+  autoplay: false,
+  preload: "auto",
+  fluid: true,
+};
+
+let transcript =
+  Astro.props.transcript ||
+  `<p>Vestibulum hendrerit ultrices nibh, sed pharetra lacus ultrices eget.</p>
+  <p>Morbi et ipsum et sapien dapibus facilisis. Integer eget semper nibh.</p>
+  <p>Proin enim nulla, egestas ac rutrum eget, ullamcorper nec turpis.</p>
+  <strong>The End.<strong>`;
+---
+
+<video data-bs-video data-setup={`${JSON.stringify(options)}`}>
+  {sources.map((source: any) => <source src={source.src} type={source.type} />)}
+</video>
+<div class='vjs-transcription accordion'>
+  <div class='accordion-item'>
+    <h2 class='accordion-header' id='transcription-head3'>
+      <button
+        class='accordion-button collapsed'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#transcription3'
+        aria-expanded='true'
+        aria-controls='transcription'
+      >
+        Trascrizione
+      </button>
+    </h2>
+    <div
+      id='transcription3'
+      class='accordion-collapse collapse'
+      role='region'
+      aria-labelledby='transcription-head3'
+    >
+      <div class='accordion-body' set:html={transcript} />
+    </div>
+  </div>
+</div>
