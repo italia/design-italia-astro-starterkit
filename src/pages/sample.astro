@@ -7,5 +7,37 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <Welcome />
+  <div class='container m-4'>
+    <div class='form-group'>
+      <label for='exampleInputText'>Campo di tipo testuale</label>
+      <input type='text' class='form-control' id='exampleInputText' />
+    </div>
+    <div class='form-group'>
+      <label for='exampleInputEmail1'>Campo di tipo email</label>
+      <input type='email' class='form-control' id='exampleInputEmail1' />
+    </div>
+    <div class='form-group'>
+      <label for='exampleInputNumber'>Campo di tipo numerico</label>
+      <input
+        type='number'
+        data-bs-input
+        class='form-control'
+        id='exampleInputNumber'
+      />
+    </div>
+    <div class='form-group'>
+      <label for='exampleInputTelephone'>Campo di tipo telefono</label>
+      <input type='tel' class='form-control' id='exampleInputTelephone' />
+    </div>
+    <div class='form-group'>
+      <label class='active' for='exampleInputTime'>Campo di tipo ora</label>
+      <input
+        type='time'
+        class='form-control'
+        id='exampleInputTime'
+        min='9:00'
+        max='18:00'
+      />
+    </div>
+  </div>
 </Layout>
