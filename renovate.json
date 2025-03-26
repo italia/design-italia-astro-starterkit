@@ -3,5 +3,6 @@
   "extends": ["config:best-practices"],
   "lockFileMaintenance": {
     "enabled": true
-  }
+  },
+  "rangeStrategy": "pin"
 }
