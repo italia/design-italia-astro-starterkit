@@ -13,7 +13,7 @@
     "bootstrap-italia": "2.14.0"
   },
   "devDependencies": {
-    "@types/node": "22.14.0",
+    "@types/node": "22.14.1",
     "sass-embedded": "1.86.3"
   }
 }
