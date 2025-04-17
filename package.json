@@ -9,7 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "5.7.2",
+    "astro": "5.7.3",
     "bootstrap-italia": "2.14.0"
   },
   "devDependencies": {
