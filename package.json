@@ -6,11 +6,14 @@
     "dev": "astro dev --port 3000",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "cms": "bunx decap-server"
   },
   "dependencies": {
     "astro": "5.7.13",
-    "bootstrap-italia": "2.14.0"
+    "bootstrap-italia": "2.14.0",
+    "decap-cms-app": "^3.6.3",
+    "marked": "^15.0.11"
   },
   "devDependencies": {
     "@types/node": "22.15.18",

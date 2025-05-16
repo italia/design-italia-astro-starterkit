@@ -1,0 +1,590 @@
+local_backend: true
+backend:
+  name: "git-gateway"
+  #repository: "https://github.com/teamdigitale/template-museo-civico"
+  # name: github
+  # branch: "main" # Branch to update (optional; defaults to master)
+  # repo: teamdigitale/template-museo-civico
+  # site_domain: template-museo-civico.vercel.app
+  # base_url: https://template-museo-civico.vercel.app
+  # auth_endpoint: oauth
+
+media_folder: "public/assets" # Location where files will be stored in the repo
+public_folder: "/assets" # The src attribute for uploaded media
+
+collections:
+  - label: "Home Page"
+    name: "homePage"
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "src/contents/data/homepages.json"
+        fields:
+          - label: "Hero"
+            name: "hero"
+            widget: "object"
+            required: false
+            fields:
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  required: false,
+                }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Text",
+                  name: "text",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Has Overlay",
+                  name: "overlayShow",
+                  widget: "boolean",
+                  default: true,
+                }
+              - {
+                  label: "Overlay Color",
+                  name: "overlayColor",
+                  widget: "color",
+                  required: false,
+                }
+              - {
+                  label: "Overlay Opacity",
+                  name: "overlayAlpha",
+                  widget: "number",
+                  default: 9,
+                  max: 10,
+                  min: 1,
+                  required: false,
+                }
+          - label: "Blocks"
+            name: "blocks"
+            widget: "list"
+            required: false
+            types:
+              - label: "Featured Section"
+                name: "featuredSection"
+                required: false
+                widget: "object"
+                fields:
+                  - {
+                      label: "Title",
+                      name: "title",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Text",
+                      name: "text",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Inverted",
+                      name: "inverted",
+                      widget: "boolean",
+                      default: false,
+                    }
+                  - {
+                      label: "Image",
+                      name: "image",
+                      widget: "image",
+                      required: false,
+                    }
+                  - label: "link"
+                    name: "link"
+                    widget: "object"
+                    required: false
+                    fields:
+                      - {
+                          label: "Label",
+                          name: "label",
+                          widget: "string",
+                          required: false,
+                        }
+                      - {
+                          label: "Url Esterno",
+                          name: "external",
+                          widget: "boolean",
+                          default: true,
+                        }
+                      - { label: "url", name: "url", widget: "string" }
+              - label: "Image Block"
+                name: "imageBlock"
+                widget: "object"
+                fields:
+                  - { label: "Image", name: "image", widget: "image" }
+                  - { label: "Alt text", name: "alt", widget: "string" }
+          - label: "Sections"
+            name: "sections"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - {
+                  label: "Kind",
+                  name: "type",
+                  widget: "select",
+                  options: ["news", "events", "works"],
+                }
+          - label: "NewsLetter"
+            name: "newsletter"
+            widget: "object"
+            required: false
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Text",
+                  name: "text",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "show",
+                  name: "show",
+                  widget: "boolean",
+                  default: true,
+                }
+              - { label: "url", name: "url", widget: "string" }
+          - label: "Call to action"
+            name: "cta"
+            widget: "object"
+            required: false
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Text",
+                  name: "text",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "show",
+                  name: "show",
+                  widget: "boolean",
+                  default: true,
+                }
+              - label: "link"
+                name: "link"
+                widget: "object"
+                required: false
+                fields:
+                  - {
+                      label: "Label",
+                      name: "label",
+                      widget: "string",
+                      required: false,
+                    }
+                  - {
+                      label: "Url Esterno",
+                      name: "external",
+                      widget: "boolean",
+                      default: true,
+                    }
+                  - { label: "url", name: "url", widget: "string" }
+
+  - name: pages
+    label: "Pages" # Used in the UI
+    folder: "src/contents/pages" # The path to the folder where the documents are stored
+    format: "frontmatter" #nested: { depth: 3 }     #meta: { path: { widget: string, label: 'uri', index_file: 'index' } }
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown", required: false }
+      - label: "Hero"
+        name: "hero"
+        required: false
+        widget: "object"
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Text", name: "text", widget: "string", required: false }
+          - { label: "Image", name: "image", widget: "image", required: false }
+      - label: "Blocks"
+        name: "blocks"
+        widget: "list"
+        required: false
+        types:
+          - label: "Featured Block"
+            name: "featured"
+            required: false
+            widget: "object"
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Text",
+                  name: "text",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "link",
+                  name: "link",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Inverted",
+                  name: "inverted",
+                  widget: "boolean",
+                  default: false,
+                }
+              - {
+                  label: "Image",
+                  name: "image",
+                  widget: "image",
+                  required: false,
+                }
+          - label: "Section"
+            name: "section"
+            widget: "object"
+            fields:
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Show link",
+                  name: "linked",
+                  widget: "boolean",
+                  default: false,
+                }
+              - {
+                  label: "Link name",
+                  name: "link",
+                  widget: "string",
+                  required: false,
+                }
+              - {
+                  label: "Content",
+                  name: "body",
+                  widget: "markdown",
+                  required: true,
+                }
+          - label: "Image Block"
+            name: "imageBlock"
+            widget: "object"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt text", name: "alt", widget: "string" }
+      - label: "Timeline"
+        name: "timeline"
+        widget: "list"
+        required: false
+        types:
+          - label: "Timeline Item"
+            name: "item"
+            widget: "object"
+            fields:
+              - {
+                  label: "Period Title",
+                  name: "periodTitle",
+                  widget: "string",
+                  required: true,
+                }
+              - label: "Image"
+                name: "image"
+                widget: "object"
+                required: false
+                fields:
+                  - {
+                      label: "Url",
+                      name: "url",
+                      widget: "image",
+                      required: false,
+                    }
+                  - {
+                      label: "Alt",
+                      name: "alt",
+                      widget: string,
+                      default: "thumb",
+                      required: false,
+                    }
+              - {
+                  label: "Title",
+                  name: "title",
+                  widget: "string",
+                  required: true,
+                }
+              - {
+                  label: "Text",
+                  name: "body",
+                  widget: "markdown",
+                  required: true,
+                }
+      - label: "Team Block"
+        name: "teamBlock"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Text", name: "body", widget: "markdown", required: false }
+          - label: "People"
+            name: "team"
+            widget: "list"
+            fields:
+              - label: "Person"
+                name: "person"
+                widget: "object"
+                fields:
+                  - {
+                      label: "Full Name",
+                      name: "name",
+                      widget: "string",
+                      required: true,
+                    }
+                  - {
+                      label: "Pic",
+                      name: "pic",
+                      widget: "image",
+                      required: true,
+                    }
+                  - {
+                      label: "Role",
+                      name: "role",
+                      widget: "string",
+                      required: true,
+                    }
+      - { label: "Publish Date", name: "datetime", widget: "datetime" }
+  - name: "news"
+    label: "News" # Used in the UI
+    folder: "src/contents/news" # The path to the folder where the documents are stored
+    format: "frontmatter"
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in frontmatter
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Url", name: "url", widget: "image" }
+          - { label: "Alt", name: "alt", widget: string, default: "thumb" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", default: "" }
+      - { label: "Publish Date", name: "pubDate", widget: "datetime" }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          default: ["news"],
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "events"
+    label: "Events" # Used in the UI
+    folder: "src/contents/events" # The path to the folder where the documents are stored
+    format: "frontmatter"
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in frontmatter
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Url", name: "url", widget: "image" }
+          - { label: "Alt", name: "alt", widget: string, default: "thumb" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", default: "" }
+      - {
+          label: "Start Date",
+          name: "from",
+          widget: "datetime",
+          required: false,
+        }
+      - { label: "End Date", name: "to", widget: "datetime", required: false }
+      - {
+          label: "Location",
+          name: "location",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Url", name: "url", widget: "string", required: false }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          default: ["events"],
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "works"
+    label: "Artworks" # Used in the UI
+    folder: "src/contents/works" # The path to the folder where the documents are stored
+    format: "frontmatter"
+    create: true # Allow users to create new documents in this collection
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in frontmatter
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Url", name: "url", widget: "image" }
+          - { label: "Alt", name: "alt", widget: string, default: "artwork" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", default: "" }
+      - { label: "Author", name: "author", widget: "string", required: false }
+      - {
+          label: "Tags",
+          name: "tags",
+          widget: "list",
+          default: ["artworks"],
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - label: "Global config"
+    name: globals
+    format: "json"
+    editor:
+      preview: false
+    files:
+      - label: "Site options"
+        name: site
+        file: "src/contents/data/config.json"
+        fields:
+          - {
+              label: "Site name",
+              name: "siteName",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Domain",
+              name: "domain",
+              widget: "string",
+              required: false,
+            }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Subtitle"
+                name: "subtitle"
+                widget: "string"
+                required: false
+              - label: "image"
+                name: "image"
+                widget: "image"
+                required: false
+              - label: "Description"
+                name: "description"
+                required: false
+                widget: "string"
+              - label: "keywords"
+                name: "keywords"
+                widget: "list"
+                required: false
+                default: ["italia"]
+          - label: "Socials"
+            name: "socials"
+            widget: "list"
+            fields:
+              - label: "title"
+                name: "title"
+                widget: "string"
+              - label: "url"
+                name: "url"
+                widget: "string"
+          - label: "Header"
+            name: "header"
+            widget: "list"
+            fields:
+              - label: "Show Socials"
+                name: "socials"
+                widget: "boolean"
+              - label: "Navigation"
+                name: "nav"
+                widget: "list"
+                fields:
+                  - label: "title"
+                    name: "title"
+                    widget: "string"
+                  - label: "link"
+                    name: "link"
+                    widget: "string"
+                  - label: "childs"
+                    name: "childs"
+                    required: false
+                    widget: "list"
+                    fields:
+                      - label: "title"
+                        name: "title"
+                        widget: "string"
+                      - label: "link"
+                        name: "link"
+                        widget: "string"
+          - label: "Footer"
+            name: "footer"
+            widget: "list"
+            fields:
+              - label: "Rows"
+                name: "rows"
+                widget: "list"
+                fields:
+                  - label: "id"
+                    name: "id"
+                    widget: "number"
+                  - label: "Sections"
+                    name: "sections"
+                    required: false
+                    widget: "list"
+                    fields:
+                      - label: "Title"
+                        name: "title"
+                        widget: "string"
+                      - label: "Show socials"
+                        name: "socials"
+                        widget: "boolean"
+                        default: false
+                      - label: "Links"
+                        name: "links"
+                        required: false
+                        widget: "list"
+                        fields:
+                          - label: "title"
+                            name: "title"
+                            widget: "string"
+                          - label: "url"
+                            name: "url"
+                            widget: "string"
+                      - label: "Contatti"
+                        name: "texts"
+                        required: false
+                        widget: "list"

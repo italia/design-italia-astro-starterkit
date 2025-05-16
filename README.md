@@ -46,3 +46,21 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+# Decap(Netlify) CMS
+
+you can start the cms running
+
+```sh
+bun run cms
+```
+
+then concurrently or in another shell run the dev
+
+```sh
+bun run dev
+```
+
+to see the website on [http://localhost:3000](http://localhost:3000)
+
+and you can now access the admin on [http://localhost:3000/admin](http://localhost:3000/admin)

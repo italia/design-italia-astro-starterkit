@@ -1,0 +1,202 @@
+{
+  "siteName": "MuseoCIvico",
+  "seo": {
+    "title": "Museo Civico",
+    "subtitle": "Museo CIvico di Nome città ",
+    "description": "Template di esempio di un museo civico blablablal",
+    "keywords": [
+      "museo",
+      "template",
+      "mah"
+    ],
+    "image": ""
+  },
+  "socials": [
+    {
+      "title": "youtube",
+      "url": "https://youtube.com"
+    },
+    {
+      "title": "instagram",
+      "url": "https://instagram.com"
+    },
+    {
+      "title": "github",
+      "url": "https://github.com"
+    }
+  ],
+  "header": [
+    {
+      "socials": false,
+      "nav": [
+        {
+          "title": "Il Museo",
+          "link": "",
+          "childs": [
+            {
+              "title": "Organizza la visita",
+              "link": "/museum#visit"
+            },
+            {
+              "title": "Esplora il museo",
+              "link": "/museum#explore"
+            },
+            {
+              "title": "Educazione e ricerca",
+              "link": "/museum#edu"
+            },
+            {
+              "title": "Bandi e gare",
+              "link": "/project"
+            },
+            {
+              "title": "Supporta il museo",
+              "link": "/about#support"
+            },
+            {
+              "title": "Organizzazione",
+              "link": "/about#org"
+            },
+            {
+              "title": "Storia",
+              "link": "/history"
+            }
+          ]
+        },
+        {
+          "title": "Mostre ed eventi",
+          "link": "/events"
+        },
+        {
+          "title": "Le Opere",
+          "link": "/works"
+        },
+        {
+          "title": "News",
+          "link": "/news"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "rows": [
+        {
+          "id": 1,
+          "sections": [
+            {
+              "socials": false,
+              "title": "Il Museo",
+              "links": [
+                {
+                  "title": "Organizza la visita",
+                  "url": "/musem#visit"
+                },
+                {
+                  "title": "Esplora il museo",
+                  "url": "/musem#explore"
+                },
+                {
+                  "title": "Mostre ed eventi",
+                  "url": "/events"
+                },
+                {
+                  "title": "Educazione e ricerca",
+                  "url": "/museum#edu"
+                }
+              ]
+            },
+            {
+              "socials": false,
+              "title": "Chi Siamo",
+              "links": [
+                {
+                  "title": "Organizzazione",
+                  "url": "/about#org"
+                },
+                {
+                  "url": "/about#people",
+                  "title": "Dirigenti e personale"
+                },
+                {
+                  "title": "Uffici e orari",
+                  "url": "/about#info"
+                },
+                {
+                  "title": "Supporta il museo",
+                  "url": "/about#support"
+                },
+                {
+                  "title": "Lavora con noi",
+                  "url": "/about#job"
+                }
+              ]
+            },
+            {
+              "socials": false,
+              "title": "Trasparenza",
+              "links": [
+                {
+                  "title": "Amministrazione trasparente",
+                  "url": "/project"
+                },
+                {
+                  "url": "/project#rules",
+                  "title": "Regolamenti"
+                },
+                {
+                  "title": "Bandi e gare",
+                  "url": "/project"
+                },
+                {
+                  "title": "Bilanci",
+                  "url": "/project"
+                },
+                {
+                  "title": "Beni immobili e patrimoni",
+                  "url": "/project"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "sections": [
+            {
+              "socials": false,
+              "title": "Contatti",
+              "texts": [
+                "Piazza Lorem ipsum dolor",
+                "23 099872 - Città - Italia",
+                "(AA)-CF 99847593875934",
+                "Tel: 0983475983475",
+                "P.IVA: 0983475983475"
+              ]
+            },
+            {
+              "socials": true,
+              "title": "Seguici su ",
+              "links": [
+                {
+                  "title": "Fedback e suggerimenti",
+                  "url": "/"
+                },
+                {
+                  "title": "Stampa",
+                  "url": "/"
+                },
+                {
+                  "title": "FAQ",
+                  "url": "/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "domain": "https://template-museocivico-italia.netlify.app",
+  "logo": ""
+}
