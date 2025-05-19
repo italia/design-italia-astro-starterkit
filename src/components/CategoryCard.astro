@@ -1,0 +1,32 @@
+---
+const { title } = Astro.props;
+---
+
+<style lang="scss">
+  .category-card-wrapper {
+    background-color: var(--bs-card-bg);
+    transition: box-shadow 0.2s;
+    border: 1px solid var(--bs-primary-light);
+    border-bottom: 8px solid var(--bs-primary-light);
+    height: 150px;
+    &:hover,
+    &:focus {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      border-color: var(--bs-primary);
+    }
+  }
+</style>
+
+<div
+  class="category-card-wrapper shadow rounded overflow-hidden d-flex align-items-center justify-content-between p-4"
+>
+  <div>
+    <h5 class="card-title fs-5 text-primary m-0">{title}</h5>
+  </div>
+  <div class="category-icon ms-3">
+    <!-- Icona utente stilizzata SVG -->
+    <svg class="icon icon-accent">
+      <use href="bsi-svg/sprites.svg#it-user"></use>
+    </svg>
+  </div>
+</div>

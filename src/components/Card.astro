@@ -1,0 +1,70 @@
+---
+const {
+  image,
+  title,
+  link,
+  alt,
+  description,
+  pubDate,
+  slug,
+  titleSize = "normal",
+} = Astro.props;
+const date = new Date(pubDate);
+---
+
+<style lang="scss">
+  .card-wrapper {
+    background-color: var(--bs-card-bg);
+  }
+</style>
+
+<div class="card-wrapper shadow rounded overflow-hidden h-100">
+  <div class="card card-img no-after">
+    {
+      image && (
+        <div class="img-responsive-wrapper ratio ratio-21x9">
+          <figure>
+            <img src={image} alt={alt} class="w-100 h-100 object-fit-cover" />
+          </figure>
+        </div>
+      )
+    }
+    <div class="card-body d-flex flex-column justify-content-between">
+      <div>
+        {
+          titleSize === "normal" && (
+            <h4 class="card-title h4 multiline-ellipsis-2 text-primary">
+              {title}
+            </h4>
+          )
+        }
+        {
+          titleSize === "small" && (
+            <h6 class="card-title h6 multiline-ellipsis-2 text-primary">
+              {title}
+            </h6>
+          )
+        }
+        {
+          description && (
+            <p class="card-description text-secondary multiline-ellipsis-7">
+              {description}
+            </p>
+          )
+        }
+      </div>
+      <div class="d-flex justify-content-between align-items-center mt-lg-5">
+        <span class="badge bg-accent">NOTIZIE</span>
+        <span class="font-monospace small fw-normal text-muted mt-4">
+          {
+            date.toLocaleDateString("it-IT", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })
+          }
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
