@@ -2,17 +2,35 @@ $primary-h: 190;
 $primary-s: 95;
 $primary-b: 55;
 $primary: #07768D;
+$primary-light: #CDE9EE;
 $header-slim-bg-color: #0F4B57;
 $color-text-primary-hover:hsl(190, 91%, 29%);
 $color-text-primary-active: hsl(190, 91%, 29%);
-$color-background-primary-lighter:hsl(190, 91%, 29%);
+$color-background-primary-lighter:#F4FAFB;
+$color-text-secondary: #2F475E;
+$color-text-accent: #9C0769;
 
 // CSS variables
 :root {
   --bs-link-hover-color: #{$color-text-primary-hover};
 }
 
+body {
+  --bs-light-rgb: 244, 250, 251;
+  --bs-card-bg: #FFFFFF;
+  --bs-primary-light: #CDE9EE;
+}
+
+.bg-accent {
+  background-color: $color-text-accent;
+}
+
+.text-accent {
+  color: $color-text-accent;
+}
+
+.icon-accent {
+  fill: $color-text-accent;
+}
+
 @import "bootstrap-italia/src/scss/bootstrap-italia";
-
-
-

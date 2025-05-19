@@ -1,0 +1,76 @@
+---
+const props = Astro.props;
+console.log("hero", props);
+const { title, text, link, show, image } = props;
+---
+
+<style lang="scss">
+  .cta {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .cta h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .cta p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .cta .container {
+    position: relative;
+    z-index: 1;
+  }
+  .cta .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .btn-accent {
+    background-color: var(--bs-accent);
+    color: white;
+  }
+</style>
+
+<section class="cta bg-primary" style={image ? `background-image: url('${image}');` : undefined}>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <h1>{title}</h1>
+          {text && <p class="d-none d-lg-block">{text}</p>}
+        </div>
+        {
+          link && (
+            <div class="text-center">
+              <a
+                href={link.url}
+                class="btn btn-lg btn-white text-accent"
+                target={link.external ? "_blank" : ""}
+              >
+                {link.label}
+              </a>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+  <!-- - overlay-->
+  <div class="bg-overlay"></div>
+</section>

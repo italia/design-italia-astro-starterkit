@@ -1,0 +1,33 @@
+---
+const { title } = Astro.props;
+---
+
+<style lang="scss">
+  .how-to-card-wrapper {
+    background-color: var(--bs-card-bg);
+  }
+</style>
+
+<div
+  class="how-to-card-wrapper shadow rounded overflow-hidden d-flex align-items-center justify-content-between p-4"
+>
+  <div>
+    <h5 class="card-title fs-5 text-primary m-0">{title}</h5>
+  </div>
+  <div class="category-icon ms-3">
+    <svg
+      class="icon icon-sm text-accent"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M3.24523 4.38889C3.30051 3.88889 3.7244 3.5 4.23913 3.5H10.4853C10.7543 3.5 11.012 3.6084 11.2002 3.80071L12 4.61833L12.7998 3.80071C12.988 3.6084 13.2457 3.5 13.5147 3.5H19.7609C20.2756 3.5 20.6995 3.88889 20.7548 4.38889H21.5C22.0523 4.38889 22.5 4.8366 22.5 5.38889V19.5C22.5 20.0523 22.0523 20.5 21.5 20.5H2.5C1.94772 20.5 1.5 20.0523 1.5 19.5V5.38889C1.5 4.8366 1.94771 4.38889 2.5 4.38889H3.24523ZM3.23913 5.38889H2.5V19.5H11.2462L10.4853 18.7222H4.23913C3.68685 18.7222 3.23913 18.2745 3.23913 17.7222V5.38889ZM12.7538 19.5H21.5V5.38889H20.7609V17.7222C20.7609 18.2745 20.3132 18.7222 19.7609 18.7222H13.5147L12.7538 19.5ZM12.5 18.3294L12.7998 18.0229C12.988 17.8306 13.2457 17.7222 13.5147 17.7222H19.7609V4.5L13.5147 4.5L12.5 5.53723V18.3294ZM11.5 5.53723L10.4853 4.5L4.23913 4.5V17.7222H10.4853C10.7543 17.7222 11.012 17.8306 11.2002 18.0229L11.5 18.3294V5.53723Z"
+        fill="currentColor"></path>
+    </svg>
+  </div>
+</div>
