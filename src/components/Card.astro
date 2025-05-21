@@ -2,11 +2,9 @@
 const {
   image,
   title,
-  link,
   alt,
   description,
   pubDate,
-  slug,
   titleSize = "normal",
 } = Astro.props;
 const date = new Date(pubDate);
@@ -54,7 +52,7 @@ const date = new Date(pubDate);
         }
       </div>
       <div class="d-flex justify-content-between align-items-center mt-lg-5">
-        <span class="badge bg-accent">NOTIZIE</span>
+        <span class="text-accent fw-bold">NOTIZIE</span>
         <span class="font-monospace small fw-normal text-muted mt-4">
           {
             date.toLocaleDateString("it-IT", {

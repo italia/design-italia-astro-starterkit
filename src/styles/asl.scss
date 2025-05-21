@@ -21,16 +21,25 @@ body {
   --bs-primary-light: #CDE9EE;
 }
 
-.bg-accent {
-  background-color: $color-text-accent;
-}
-
 .text-accent {
   color: $color-text-accent;
 }
 
 .icon-accent {
   fill: $color-text-accent;
+}
+
+@mixin multiline-ellipsis($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@for $i from 1 through 10 {
+  .multiline-ellipsis-#{$i} {
+    @include multiline-ellipsis($i);
+  }
 }
 
 @import "bootstrap-italia/src/scss/bootstrap-italia";
