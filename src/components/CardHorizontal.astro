@@ -1,0 +1,88 @@
+---
+const {
+  image,
+  title,
+  alt,
+  description,
+  pubDate,
+  titleSize = "normal",
+  contentWidth = 60
+} = Astro.props;
+const date = pubDate ? new Date(pubDate) : null;
+const imageWidth = 100 - contentWidth;
+---
+
+<style lang="scss" define:vars={{ contentWidth, imageWidth }}>
+  .card-horizontal-wrapper {
+    background-color: var(--bs-card-bg);
+    display: flex;
+    flex-direction: row;
+    min-height: 260px;
+    overflow: hidden;
+  }
+  .card-horizontal-content {
+    flex: 1 1 var(--content-width);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .card-horizontal-image {
+    flex: 1 1 var(--image-width);
+    min-width: 200px;
+    max-width: 420px;
+    display: flex;
+    align-items: stretch;
+    background: #f6fafd;
+  }
+  .card-horizontal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
+
+<div class="card-horizontal-wrapper shadow rounded">
+  <div class="card-horizontal-content p-5">
+    <div>
+      {titleSize === "big" && (
+        <h3 class="fw-bold text-primary mb-3 multiline-ellipsis-3 fs-2" style="font-size:2.3rem;">
+          {title}
+        </h3>
+      )}
+      {titleSize === "normal" && (
+        <h4 class="text-primary mb-3 multiline-ellipsis-3 fs-3" style="font-size:2.3rem;">
+          {title}
+        </h4>
+      )}
+      {
+        description && (
+          <p class="text-secondary mb-4 multiline-ellipsis-3" style="font-size:1.3rem;">
+            {description}
+          </p>
+        )
+      }
+    </div>
+    <div>
+      <span class="text-accent fw-bold">NOTIZIA</span>
+      {
+        date && (
+          <span class="font-monospace small fw-normal text-muted ms-3">
+            {date.toLocaleDateString("it-IT", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })}
+          </span>
+        )
+      }
+    </div>
+  </div>
+  {
+    image && (
+      <div class="card-horizontal-image">
+        <img src={image} alt={alt} />
+      </div>
+    )
+  }
+</div>

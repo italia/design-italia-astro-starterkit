@@ -3,6 +3,8 @@ import Card from "./Card.astro";
 import CategoryCard from "./CategoryCard.astro";
 import HowToCard from "./HowToCard.astro";
 import CTA from "./CTA.astro";
+import QuickLink from "./QuickLink.astro";
+import CardHorizontal from "./CardHorizontal.astro";
 
 const categories = [
   "Donne",
@@ -21,14 +23,84 @@ const howTo = [
   "Pagare il ticket",
   "Richiedere esenzioni dal pagamento del ticket",
   "Cambiare/scegliere il medico di base o pediatra",
-  "Iscriversi al Sistema Sanitario Nazionale"
+  "Iscriversi al Sistema Sanitario Nazionale",
 ];
 ---
 
 <div>
   <h1 class="visually-hidden" id="main-container">Nome del comune</h1>
+  <section id="asl-main-content" class="py-4">
+    <h2 class="visually-hidden">In evidenza</h2>
+    <div class="container">
+      <h2>In evidenza</h2>
+      <div class="row mt-4">
+        <div class="col-12 col-md-12 col-lg-12 mb-4">
+          <CardHorizontal
+            title="Ottobre rosa, mese della prevenzione del tumore al seno"
+            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
+            image="https://picsum.photos/720/400"
+            alt="Descrizione immagine"
+            slug="slug"
+            titleSize="big"
+            contentWidth="20"
+          />
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 mb-4">
+          <CardHorizontal
+            title="Dal 9 ottobre sarà possibile prenotare la vaccinazione antinfluenzale"
+            image="https://picsum.photos/720/400"
+            alt="Descrizione immagine"
+            slug="slug"
+          />
+        </div>
+        <div class="col-12 col-md-12 col-lg-6 mb-4">
+          <CardHorizontal
+            title="Denatalità, Italia al bivio: opportunità di rinascita o situazione irreversibile?"
+            image="https://picsum.photos/720/400"
+            alt="Descrizione immagine"
+            slug="slug"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="asl-how-to" class="bg-light py-4">
+    <h2 class="visually-hidden">Servizi e prestazioni</h2>
+    <div class="container">
+      <h2>Servizi e prestazioni</h2>
+      <p class="text-secondary fs-4 py-2">
+        Scopri e accedi ai servizi dell'ASL come visite specialistiche, esami,
+        percorsi di cura, referti e certificati
+      </p>
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <QuickLink
+            title="Visite specialistiche"
+            description="Tutte le visite specialistiche erogate dall’ASL"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <QuickLink
+            title="Visite specialistiche"
+            description="Tutti gli esami e le analisi che puoi effettuare presso l’ASL"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <QuickLink
+            title="Visite specialistiche"
+            description="Servizi e prestazioni per prevenire la comparsa, la diffusione e la progressione delle malattie."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="asl-cta">
-    <CTA image="/assets/asl-cta.png" title="Come fare per" text="Scopri e approfondisci tutte le procedure offerte dall’ASL" link={{ label: "Scopri di più", url: "#" }} />
+    <CTA
+      image="/assets/asl-cta.png"
+      title="Come fare per"
+      text="Scopri e approfondisci tutte le procedure offerte dall’ASL"
+      link={{ label: "Scopri di più", url: "#" }}
+    />
   </section>
   <section id="asl-how-to" class="bg-light py-4">
     <h2 class="visually-hidden">Come fare per</h2>

@@ -1,0 +1,20 @@
+---
+const { title, description, link } = Astro.props;
+---
+
+<style lang="scss">
+  .quick-link-description {
+    min-height: 64px;
+  }
+</style>
+<div class="quick-link-wrapper d-flex flex-column gap-4 border-bottom mt-4">
+  <div class="d-flex align-items-center justify-content-between w-100">
+    <h3 class="card-title h5 text-primary m-0">{title}</h3>
+    <svg class="icon icon-accent">
+      <use href="bsi-svg/sprites.svg#it-chevron-right"></use>
+    </svg>
+  </div>
+  <p class="quick-link-description text-secondary multiline-ellipsis-2">
+    {description}
+  </p>
+</div>
