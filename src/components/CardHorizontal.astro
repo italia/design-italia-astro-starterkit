@@ -5,14 +5,47 @@ const {
   alt,
   description,
   pubDate,
+  from = null,
+  to = null,
   titleSize = "normal",
-  contentWidth = 60
+  contentWidth = 60,
+  badgeLabel = "",
+  reverseContent = false,
 } = Astro.props;
 const date = pubDate ? new Date(pubDate) : null;
 const imageWidth = 100 - contentWidth;
+
+const fromDate = from
+  ? new Date(from).toLocaleDateString("it-IT", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
+
+const toDate = to
+  ? new Date(to).toLocaleDateString("it-IT", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })
+  : null;
+
+const fromTime = from
+  ? new Date(from).toLocaleTimeString("it-IT", {
+      hour: "2-digit",
+      minute: "2-digit",
+    })
+  : null;
 ---
 
-<style lang="scss" define:vars={{ contentWidth, imageWidth }}>
+<style
+  lang="scss"
+  define:vars={{
+    contentWidth: `${contentWidth}%`,
+    imageWidth: `${imageWidth}%`,
+  }}
+>
   .card-horizontal-wrapper {
     background-color: var(--bs-card-bg);
     display: flex;
@@ -21,15 +54,14 @@ const imageWidth = 100 - contentWidth;
     overflow: hidden;
   }
   .card-horizontal-content {
-    flex: 1 1 var(--content-width);
+    flex: 1 1 var(--contentWidth);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   .card-horizontal-image {
-    flex: 1 1 var(--image-width);
+    flex: 1 1 var(--imageWidth);
     min-width: 200px;
-    max-width: 420px;
     display: flex;
     align-items: stretch;
     background: #f6fafd;
@@ -43,28 +75,58 @@ const imageWidth = 100 - contentWidth;
 </style>
 
 <div class="card-horizontal-wrapper shadow rounded">
+  {
+    reverseContent && image && (
+      <div class="card-horizontal-image">
+        <img src={image} alt={alt} />
+      </div>
+    )
+  }
   <div class="card-horizontal-content p-5">
     <div>
-      {titleSize === "big" && (
-        <h3 class="fw-bold text-primary mb-3 multiline-ellipsis-3 fs-2" style="font-size:2.3rem;">
-          {title}
-        </h3>
-      )}
-      {titleSize === "normal" && (
-        <h4 class="text-primary mb-3 multiline-ellipsis-3 fs-3" style="font-size:2.3rem;">
-          {title}
-        </h4>
-      )}
+      {
+        titleSize === "big" && (
+          <h3
+            class="fw-bold text-primary mb-3 multiline-ellipsis-3 fs-2"
+            style="font-size:2.3rem;"
+          >
+            {title}
+          </h3>
+        )
+      }
+      {
+        fromDate && (
+          <h4 class="card-date fw-semibold text-secondary">
+            {fromDate &&
+              (toDate
+                ? `Dal ${fromDate} al ${toDate}`
+                : `Il ${fromDate}, ore ${fromTime}`)}
+          </h4>
+        )
+      }
+      {
+        titleSize === "normal" && (
+          <h4
+            class="text-primary mb-3 multiline-ellipsis-3 fs-3"
+            style="font-size:2.3rem;"
+          >
+            {title}
+          </h4>
+        )
+      }
       {
         description && (
-          <p class="text-secondary mb-4 multiline-ellipsis-3" style="font-size:1.3rem;">
+          <p
+            class="text-secondary mb-3 multiline-ellipsis-3"
+            style="font-size:1.3rem;"
+          >
             {description}
           </p>
         )
       }
     </div>
     <div>
-      <span class="text-accent fw-bold">NOTIZIA</span>
+      <span class="text-accent fw-bold">{badgeLabel}</span>
       {
         date && (
           <span class="font-monospace small fw-normal text-muted ms-3">
@@ -79,7 +141,7 @@ const imageWidth = 100 - contentWidth;
     </div>
   </div>
   {
-    image && (
+    !reverseContent && image && (
       <div class="card-horizontal-image">
         <img src={image} alt={alt} />
       </div>

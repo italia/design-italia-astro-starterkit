@@ -1,0 +1,10 @@
+---
+const { href, label } = Astro.props;
+---
+
+<div>
+  <a href={href} class="text-primary fw-bold">{label}</a>
+  <svg class="icon icon-sm icon-primary"
+    ><use xlink:href="bsi-svg/sprites.svg#it-arrow-right"></use></svg
+  >
+</div>

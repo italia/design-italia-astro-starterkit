@@ -2,16 +2,45 @@ $primary-h: 0;
 $primary-s: 0;
 $primary-b: 20;
 
-$primary:#333333;
+$primary:#7D2670;
 
 $header-slim-bg-color: #262626;
 $color-text-primary-hover: hsl(0, 0%, 20%);
 $color-text-primary-active:hsl(0, 0%, 20%);
 $color-background-primary-lighter: hsl(0, 0%, 20%);
+$color-text-secondary: #2F475E;
+$color-text-accent: #7D2670;
 
 // CSS variables
 :root {
   --bs-link-hover-color: #{$color-text-primary-hover};
+}
+
+body {
+  --bs-light-rgb: 251, 249, 251;
+  --bs-card-bg: #FFFFFF;
+  --bs-primary-light: #CDE9EE;
+}
+
+.text-accent {
+  color: $color-text-accent;
+}
+
+.icon-accent {
+  fill: $color-text-accent;
+}
+
+@mixin multiline-ellipsis($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@for $i from 1 through 10 {
+  .multiline-ellipsis-#{$i} {
+    @include multiline-ellipsis($i);
+  }
 }
 
 @import "bootstrap-italia/src/scss/bootstrap-italia";

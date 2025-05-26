@@ -1,0 +1,189 @@
+---
+import CardWork from "./CardWork.astro";
+import CardHorizontal from "./CardHorizontal.astro";
+import GoToSection from "./GoToSection.astro";
+import Card from "./Card.astro";
+import CTA from "./CTA.astro";
+import Newsletter from "./Newsletter.astro";
+---
+
+<div>
+  <h1 class="visually-hidden" id="main-container">Nome del comune</h1>
+  <section id="musei-main-content" class="py-4 bg-light">
+    <h2 class="visually-hidden">In evidenza</h2>
+    <div class="container">
+      <h2>In evidenza</h2>
+      <div class="row mt-4">
+        <div class="col-12 mb-4">
+          <CardHorizontal
+            title="Hayes, il pittore romantico"
+            description="L’esposizione racconta con un centinaio di opere il fondamentale ruolo di Torino per l’affermarsi del Liberty, un’arte che nella capitale sabauda diviene il fulcro di una storia che travolge ogni aspetto della vita e della società."
+            image="https://picsum.photos/720/400"
+            alt="Descrizione immagine"
+            slug="slug"
+            titleSize="big"
+            contentWidth="50"
+            reverseContent
+            from="2021-01-01"
+            to="2021-01-01"
+          />
+        </div>
+        <div class="col-12 mb-4">
+          <CardHorizontal
+            title="Trasmettere il pensiero di Alighiero Boetti"
+            image="https://picsum.photos/720/401"
+            alt="Descrizione immagine"
+            description="In occasione del trentesimo anniversario della scomparsa di Alighiero Boetti, l’archivio Alighiero Boetti annuncia l'uscita di quattro nuovi progetti, editi da Agata Boetti, che mettono in luce le sfaccettature del pensiero dell'artista."
+            slug="slug"
+            contentWidth="50"
+            reverseContent
+          />
+        </div>
+        <div class="col-12 mb-4">
+          <CardHorizontal
+            title="Rinascimento Moderno: l'Arte Contemporanea"
+            image="https://picsum.photos/720/402"
+            alt="Descrizione immagine"
+            description="Un viaggio attraverso il Rinascimento moderno, questa mostra esplora l'intersezione tra arte classica e contemporanea, presentando opere che reinterpretano capolavori storici con un tocco moderno e innovativo."
+            slug="slug"
+            contentWidth="50"
+            reverseContent
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <GoToSection href="#asl-how-to" label="Tutte le mostre e gli eventi" />
+      </div>
+    </div>
+  </section>
+  <section id="musei-opere" class="bg-light py-4">
+    <h2 class="visually-hidden">Immergiti nel museo</h2>
+    <div class="container">
+      <h2>Immergiti nel museo</h2>
+      <div class="row mt-4">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <CardWork
+            image="https://picsum.photos/400/400"
+            alt="Descrizione immagine"
+            title="La persistenza della memoria"
+            author="Salvador Dali"
+            workDate="2021-01-01"
+            ratio="1x1"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <CardWork
+            image="https://picsum.photos/402/400"
+            alt="Descrizione immagine"
+            title="La persistenza della memoria"
+            author="Salvador Dali"
+            workDate="2021-01-01"
+            ratio="1x1"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <CardWork
+            image="https://picsum.photos/401/400"
+            alt="Descrizione immagine"
+            title="La persistenza della memoria"
+            author="Salvador Dali"
+            workDate="2021-01-01"
+            ratio="1x1"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <CardWork
+            image="https://picsum.photos/401/402"
+            alt="Descrizione immagine"
+            title="La persistenza della memoria"
+            author="Salvador Dali"
+            workDate="2021-01-01"
+            ratio="1x1"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <CardWork
+            image="https://picsum.photos/401/401"
+            alt="Descrizione immagine"
+            title="La persistenza della memoria"
+            author="Salvador Dali"
+            workDate="2021-01-01"
+            ratio="1x1"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <CardWork
+            image="https://picsum.photos/403/400"
+            alt="Descrizione immagine"
+            title="La persistenza della memoria"
+            author="Salvador Dali"
+            workDate="2021-01-01"
+            ratio="1x1"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <GoToSection href="#musei-opere" label="Tutte le opere" />
+      </div>
+    </div>
+  </section>
+  <section id="musei-news" class="bg-light py-4">
+    <h2 class="visually-hidden">Le ultime notizie del Museo</h2>
+    <div class="container">
+      <h2>Le ultime notizie del Museo</h2>
+      <div class="row mt-4">
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <Card
+            title="Inaugurazione nuova sala delle Installazioni"
+            description="L'inizio del restauro della tela “Il binario” segna un momento cruciale nella conservazione del nostro patrimonio artistico. Questo affresco iconico, intriso di storia e significato, sarà riportato al suo antico splendore grazie all'abilità e alla dedizione dei nostri restauratori esperti."
+            image="https://picsum.photos/720/400"
+            alt="Descrizione immagine"
+            pubDate="2021-01-01"
+            slug="slug"
+            descriptionFont="font-serif"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <Card
+            title="Nuovo direttore per la sezione Archiettura urbana"
+            description="L'inizio del restauro della tela “Il binario” segna un momento cruciale nella conservazione del nostro patrimonio artistico. Questo affresco iconico, intriso di storia e significato, sarà riportato al suo antico splendore grazie all'abilità e alla dedizione dei nostri restauratori esperti."
+            image="https://picsum.photos/720/401"
+            alt="Descrizione immagine"
+            pubDate="2021-01-01"
+            slug="slug"
+            descriptionFont="font-serif"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-4">
+          <Card
+            title="È iniziato il restauro della tela “Il binario"
+            description="L'inizio del restauro della tela “Il binario” segna un momento cruciale nella conservazione del nostro patrimonio artistico. Questo affresco iconico, intriso di storia e significato, sarà riportato al suo antico splendore grazie all'abilità e alla dedizione dei nostri restauratori esperti."
+            image="https://picsum.photos/720/402"
+            alt="Descrizione immagine"
+            pubDate="2021-01-01"
+            slug="slug"
+            descriptionFont="font-serif"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <GoToSection href="#musei-news" label="Tutte le notizie" />
+      </div>
+    </div>
+  </section>
+  <section id="musei-newsletter">
+    <Newsletter
+      title="Iscriviti alla nostra newsletter"
+      text="Fai una donazione e diventa nostro membro"
+      link={{ label: "Scopri di più", url: "#" }}
+    />
+  </section>
+  <section id="musei-cta">
+    <CTA
+      image="/assets/musei-cta.png"
+      title="Vuoi supportare il Museo?"
+      text="Fai una donazione e diventa nostro membro"
+      link={{ label: "Scopri di più", url: "#" }}
+    />
+  </section>
+</div>
