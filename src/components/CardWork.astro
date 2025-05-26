@@ -3,14 +3,12 @@ const {
   image,
   title,
   alt,
-  description,
-  descriptionFont = "",
-  pubDate,
+  author,
+  workDate,
   titleSize = "normal",
-  badgeLabel = "",
   ratio = "21x9",
 } = Astro.props;
-const date = new Date(pubDate);
+const date = new Date(workDate);
 ---
 
 <style lang="scss">
@@ -19,8 +17,8 @@ const date = new Date(pubDate);
   }
 </style>
 
-<div class="card-wrapper shadow rounded overflow-hidden h-100">
-  <div class="card card-img no-after">
+<div class="overflow-hidden h-100">
+  <div class="card-img no-after">
     {
       image && (
         <div class={`img-responsive-wrapper ratio ratio-${ratio}`}>
@@ -30,34 +28,31 @@ const date = new Date(pubDate);
         </div>
       )
     }
-    <div class="card-body d-flex flex-column justify-content-between">
-      <div class="mb-5">
+    <div class="d-flex flex-column justify-content-between">
+      <div>
         {
           titleSize === "normal" && (
-            <h4 class="card-title h4 multiline-ellipsis-2 text-primary">
+            <h4 class="card-title h4 multiline-ellipsis-2 text-primary mt-3">
               {title}
             </h4>
           )
         }
         {
           titleSize === "small" && (
-            <h6 class="card-title h6 multiline-ellipsis-2 text-primary">
+            <h6 class="card-title h6 multiline-ellipsis-2 text-primary mt-3">
               {title}
             </h6>
           )
         }
         {
-          description && (
-            <p
-              class={`card-description text-secondary multiline-ellipsis-7 ${descriptionFont}`}
-            >
-              {description}
-            </p>
+          author && (
+            <div class="text-secondary fw-bold mt-2">
+              {author}
+            </div>
           )
         }
       </div>
-      <div class="d-flex justify-content-between align-items-center">
-        <span class="text-accent fw-bold">{badgeLabel}</span>
+      <div class="mt-2">
         <span class="font-monospace small fw-normal text-muted">
           {
             date.toLocaleDateString("it-IT", {

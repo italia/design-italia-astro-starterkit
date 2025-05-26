@@ -1,0 +1,81 @@
+---
+const props = Astro.props;
+console.log("hero", props);
+const { title, text, link, show } = props;
+---
+
+<style lang="scss">
+  .newsletter {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .newsletter h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  .newsletter p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .newsletter .container {
+    position: relative;
+    z-index: 1;
+  }
+  .newsletter .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  .form-submit {
+    background-color: var(--bs-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+  }
+  .email-form {
+    min-width: 300px;
+  }
+</style>
+
+<section class="newsletter bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <h1>{title}</h1>
+          {text && <p class="d-none d-lg-block">{text}</p>}
+        </div>
+        <form class="d-flex justify-content-center mt-5">
+          <div class="form-group email-form">
+            <label for="exampleInputEmail1">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              required
+            />
+            <small class="form-text text-muted">*Inserisci la tua email</small>
+          </div>
+
+          <div>
+            <button type="submit" class="form-submit">Iscriviti</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- - overlay-->
+  <div class="bg-overlay"></div>
+</section>
