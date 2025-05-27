@@ -72,6 +72,22 @@ const fromTime = from
     object-fit: cover;
     display: block;
   }
+
+  @media (max-width: 768px) {
+    .card-horizontal-wrapper {
+      flex-direction: column;
+    }
+
+    .card-horizontal-content {
+      flex: 1 1 100%;
+      order: 2;
+    }
+
+    .card-horizontal-image {
+      flex: 1 1 100%;
+      order: 1;
+    }
+  }
 </style>
 
 <div class="card-horizontal-wrapper shadow rounded">
