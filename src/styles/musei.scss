@@ -1,15 +1,19 @@
-$primary-h: 0;
-$primary-s: 0;
-$primary-b: 20;
+$primary-h: 900;
+$primary-s: 900;
+$primary-b: 900;
 
 $primary:#7D2670;
+$secondary: #2F475E;
+$accent-darker: #46163F;
+$accent-midlight: #E2CADF;
 
 $header-slim-bg-color: #262626;
 $color-text-primary-hover: hsl(0, 0%, 20%);
 $color-text-primary-active:hsl(0, 0%, 20%);
 $color-background-primary-lighter: hsl(0, 0%, 20%);
-$color-text-secondary: #2F475E;
-$color-text-accent: #7D2670;
+$color-text-secondary: $secondary;
+$color-text-accent: $primary;
+$color-background-accent-darker: $accent-darker;
 
 // CSS variables
 :root {
@@ -22,12 +26,20 @@ body {
   --bs-primary-light: #CDE9EE;
 }
 
+.bg-accent-darker {
+  background-color: $color-background-accent-darker;
+}
+
 .text-accent {
   color: $color-text-accent;
 }
 
 .icon-accent {
   fill: $color-text-accent;
+}
+
+.border-accent-midlight {
+  border-color: $accent-midlight;
 }
 
 @mixin multiline-ellipsis($lines: 3) {
