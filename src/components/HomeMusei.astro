@@ -4,11 +4,81 @@ import CardHorizontal from "./CardHorizontal.astro";
 import GoToSection from "./GoToSection.astro";
 import Card from "./Card.astro";
 import CTA from "./CTA.astro";
+import Rating from "./Rating.astro";
+import Hero from "./Hero.astro";
 import Newsletter from "./Newsletter.astro";
+import InfoCard from "./InfoCard.astro";
 ---
 
 <div>
   <h1 class="visually-hidden" id="main-container">Nome del comune</h1>
+  <section id="musei-hero">
+    <Hero
+      image="/assets/musei-hero.png"
+      title="Arte, storia e cultura tutte in unico Museo."
+      text="Il museo di arte moderna e contemporanea della città di Roma. Esplora la storia artistica italiana dal 1900 ad oggi."
+      items={[
+        {
+          label: "Palazzo Ludovisi",
+          url: "#",
+          image: "https://picsum.photos/720/400",
+        },
+        {
+          label: "Giardino Botanico Margherita Hack",
+          url: "#",
+          image: "https://picsum.photos/720/401",
+        },
+      ]}
+      paths={[
+        { label: "Scopri le collezioni", url: "#" },
+        { label: "Scopri gli artisti", url: "#" },
+      ]}
+    />
+  </section>
+  <section id="musei-info" class="py-5 my-2">
+    <h2 class="visually-hidden">Orari</h2>
+    <div class="container">
+      <h2>Da sapere per la tua visita</h2>
+      <div class="row mt-4 gx-5">
+        <div class="col-12 col-md-6 col-lg-6 mb-4">
+          <InfoCard
+            title="Orari"
+            icon="it-clock"
+            items={[
+              {
+                label: "Palazzo Ludovisi",
+                description: "Aperto oggi dalle 9.00 alle 18.00",
+              },
+              {
+                label: "Giardino Botanico Margherita Hack",
+                description: "Aperto oggi dalle 9.00 alle 18.00",
+              },
+            ]}
+            goToText="Scopri di più"
+            goToUrl="#"
+          />
+        </div>
+        <div class="col-12 col-md-6 col-lg-6 mb-4">
+          <InfoCard
+            title="Dove siamo"
+            icon="it-map-marker"
+            items={[
+              {
+                label: "Palazzo Ludovisi",
+                description: "Via san Vito, 21, 01234, Roma (RM)",
+              },
+              {
+                label: "Giardino Botanico Margherita Hack",
+                description: "Via san Vito, 21, 01234, Roma (RM)",
+              },
+            ]}
+            goToText="Scopri di più"
+            goToUrl="#"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
   <section id="musei-main-content" class="py-4 bg-light">
     <h2 class="visually-hidden">In evidenza</h2>
     <div class="container">
@@ -60,7 +130,7 @@ import Newsletter from "./Newsletter.astro";
     <h2 class="visually-hidden">Immergiti nel museo</h2>
     <div class="container">
       <h2>Immergiti nel museo</h2>
-      <div class="row mt-4">
+      <div class="row mt-4 gx-5">
         <div class="col-12 col-md-6 col-lg-4 mb-4">
           <CardWork
             image="https://picsum.photos/400/400"
@@ -185,5 +255,8 @@ import Newsletter from "./Newsletter.astro";
       text="Fai una donazione e diventa nostro membro"
       link={{ label: "Scopri di più", url: "#" }}
     />
+  </section>
+  <section id="musei-rating">
+    <Rating title="Quanto sono chiare le informazioni su questa pagina?" />
   </section>
 </div>

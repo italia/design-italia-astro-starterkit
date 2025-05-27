@@ -1,0 +1,118 @@
+---
+const props = Astro.props;
+console.log("hero", props);
+const { title, text, paths, show, image, items } = props;
+---
+
+<style lang="scss">
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  .hero .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .btn-accent {
+    background-color: var(--bs-accent);
+    color: white;
+  }
+
+  .hero-item {
+    height: 80px;
+    max-width: 415px;
+  }
+
+  .hero-item-image {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<section
+  class="hero bg-primary"
+  style={image ? `background-image: url('${image}');` : undefined}
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>{title}</h1>
+        {text && <p class="col-12 col-md-5">{text}</p>}
+        {
+          items && (
+            <div class="d-flex gap-4 mt-5 mb-5">
+              {items.map(
+                (item: {
+                  label: string;
+                  url: string;
+                  external?: boolean;
+                  image: string;
+                }) => (
+                  <a href={item.url} class={`bg-accent-darker text-white fw-semibold`}>
+                    <div class="hero-item d-flex align-items-center gap-2 overflow-hidden">
+                      <div class="hero-item-image">
+                        <img src={item.image} alt={item.label} class="img-fluid" />
+                      </div>
+                      <span class="ms-4">{item.label}</span>
+                    </div>
+                  </a>
+                ),
+              )}
+            </div>
+          )
+        }
+        {
+          paths && (
+            <div class="d-flex gap-4">
+              {paths.map(
+                (
+                  path: { label: string; url: string; external?: boolean },
+                  index: number,
+                ) => (
+                  <a
+                    href={path.url}
+                    class={`btn btn-lg text-accent ${index === 0 ? "btn-white" : "btn-outline-white"}`}
+                    target={path.external ? "_blank" : ""}
+                  >
+                    {path.label}
+                  </a>
+                ),
+              )}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+  <!-- - overlay-->
+  <div class="bg-overlay"></div>
+</section>
