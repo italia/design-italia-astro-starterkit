@@ -2,35 +2,33 @@ $primary-h: 190;
 $primary-s: 95;
 $primary-b: 55;
 
-$primary: #07768D;
-$primary-light: #CDE9EE;
+$primary: #07768d;
+$primary-light: #cde9ee;
 
-$secondary: #2F475E;
+$secondary: #2f475e;
 
-$accent: #9C0769;
-$accent-darker: #0F4B57;
-$accent-midlight: #CDE9EE;
+$accent: #9c0769;
+$accent-darker: #0f4b57;
+$accent-midlight: #cde9ee;
 
-$header-slim-bg-color: #0F4B57;
-$color-text-primary-hover:hsl(190, 91%, 29%);
+$header-slim-bg-color: #0f4b57;
+$color-text-primary-hover: hsl(190, 91%, 29%);
 $color-text-primary-active: hsl(190, 91%, 29%);
-$color-background-primary-lighter:#F4FAFB;
+$color-background-primary-lighter: #f4fafb;
 
 $color-text-secondary: $secondary;
 $color-text-accent: $accent;
 $color-background-accent-darker: $accent-darker;
 
-$light-bg: rgb(244,250,251);
-$card-bg: #fff;
-
 // CSS variables
 :root {
   --bs-link-hover-color: #{$color-text-primary-hover};
 }
+
 body {
-  --bs-light-rgb: $light-bg;
-  --bs-card-bg: $card-bg;
-  --bs-primary-light: $primary-light;
+  --bs-light-rgb: 244, 250, 251;
+  --bs-card-bg: #FFF;
+  --bs-primary-light: #cde9ee;
 }
 
 .text-accent {
