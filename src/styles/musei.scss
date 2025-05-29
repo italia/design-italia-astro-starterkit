@@ -20,18 +20,15 @@ $color-text-secondary: $secondary;
 $color-text-accent: $primary;
 $color-background-accent-darker: $accent-darker;
 
-$light-bg: rgb(251 249 251);
-$card-bg: #fff;
-
 // CSS variables
 :root {
   --bs-link-hover-color: #{$color-text-primary-hover};
 }
 
 body {
-  --bs-light-rgb: $light-bg;
-  --bs-card-bg: $card-bg;
-  --bs-primary-light: $primary-light;
+  --bs-light-rgb: 251, 249, 251;
+  --bs-card-bg: #FFF;
+  --bs-primary-light: #CDE9EE;
 }
 
 .bg-accent-darker {

@@ -2,48 +2,406 @@
   {
     "slug": "asl",
     "id": "asl",
-    "categories": [
-      "Donne",
-      "Bambini",
-      "Prestatori di cura (caregivers)",
-      "Anziani",
-      "Persone con disabilità",
-      "Animali",
-      "Imprese",
-      "Cittadini stranieri"
-    ],
-    "howTo": [
-      "Prenotare una visita o un esame",
-      "Ritirare i referti",
-      "Pagare il ticket",
-      "Richiedere esenzioni dal pagamento del ticket",
-      "Cambiare/scegliere il medico di base o pediatra",
-      "Iscriversi al Sistema Sanitario Nazionale"
-    ],
-    "cards": []
+    "sections": [
+      {
+        "id": "featured",
+        "title": "In evidenza",
+        "description": "",
+        "type": "featuredCards",
+        "data": [
+          {
+            "title": "Ottobre rosa, mese della prevenzione del tumore al seno",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+            "image": "https://picsum.photos/720/400",
+            "alt": "Descrizione immagine",
+            "slug": "slug",
+            "titleSize": "big",
+            "contentWidth": "50",
+            "badgeLabel": "NOTIZIA"
+          },
+          {
+            "title": "Dal 9 ottobre sarà possibile prenotare la vaccinazione antinfluenzale",
+            "image": "https://picsum.photos/720/401",
+            "alt": "Descrizione immagine",
+            "slug": "slug",
+            "badgeLabel": "NOTIZIA"
+          },
+          {
+            "title": "Denatalità, Italia al bivio: opportunità di rinascita o situazione irreversibile?",
+            "image": "https://picsum.photos/720/402",
+            "alt": "Descrizione immagine",
+            "slug": "slug",
+            "badgeLabel": "NOTIZIA"
+          }
+        ]
+      },
+      {
+        "id": "services",
+        "title": "Servizi e prestazioni",
+        "description": "Scopri e accedi ai servizi dell'ASL come visite specialistiche, esami, percorsi di cura, referti e certificati",
+        "type": "quickLinks",
+        "data": [
+          {
+            "title": "Visite specialistiche",
+            "description": "Tutte le visite specialistiche erogate dall'ASL"
+          },
+          {
+            "title": "Visite specialistiche",
+            "description": "Tutti gli esami e le analisi che puoi effettuare presso l'ASL"
+          },
+          {
+            "title": "Visite specialistiche",
+            "description": "Servizi e prestazioni per prevenire la comparsa, la diffusione e la progressione delle malattie."
+          }
+        ]
+      },
+      {
+        "id": "cta",
+        "type": "cta",
+        "data": {
+          "image": "/assets/asl-cta.png",
+          "title": "Come fare per",
+          "text": "Scopri e approfondisci tutte le procedure offerte dall'ASL",
+          "link": {
+            "label": "Scopri di più",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "howTo",
+        "title": "Come fare per",
+        "description": "Scopri e approfondisci tutte le procedure offerte dall'ASL",
+        "type": "howTo",
+        "data": [
+          "Prenotare una visita o un esame",
+          "Ritirare i referti",
+          "Pagare il ticket",
+          "Richiedere esenzioni dal pagamento del ticket",
+          "Cambiare/scegliere il medico di base o pediatra",
+          "Iscriversi al Sistema Sanitario Nazionale"
+        ]
+      },
+      {
+        "id": "categories",
+        "title": "Tutto per",
+        "description": "Scopri i servizi, le strutture e le novità per tipologia di utente",
+        "type": "categories",
+        "data": [
+          "Donne",
+          "Bambini",
+          "Prestatori di cura (caregivers)",
+          "Anziani",
+          "Persone con disabilità",
+          "Animali",
+          "Imprese",
+          "Cittadini stranieri"
+        ]
+      },
+      {
+        "id": "news",
+        "title": "ASL comunica",
+        "description": "Tutte le notizie, i comunicati stampa e gli eventi dell'ASL",
+        "type": "news",
+        "data": [
+          {
+            "title": "Ottobre rosa, mese della prevenzione del tumore al seno",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+            "image": "https://picsum.photos/720/400",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "badgeLabel": "NOTIZIA"
+          },
+          {
+            "title": "Inquinamento atmosferisco e salute",
+            "description": "Studio condotto in collaborazione con la Cardiologia dell'Università di Roma",
+            "image": "https://picsum.photos/720/401",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "badgeLabel": "NOTIZIA"
+          },
+          {
+            "title": "Inaugurata nuova sala per il parto in acqua per l'Ospedale G. Rossetti",
+            "description": "L'ASL di Roma ha inaugurato la nuova sala per il parto in acqua per l'Ospedale G. Rossetti",
+            "image": "https://picsum.photos/720/402",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "badgeLabel": "NOTIZIA"
+          }
+        ]
+      },
+      {
+        "id": "tenders",
+        "title": "Bandi di gara",
+        "description": "Gli ultimi bandi e concorsi attivi presso l'ASL",
+        "type": "tenders",
+        "data": [
+          {
+            "title": "Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.",
+            "titleSize": "small",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "badgeLabel": "BANDO DI GARA"
+          },
+          {
+            "title": "Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.s",
+            "titleSize": "small",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "badgeLabel": "BANDO DI GARA"
+          },
+          {
+            "title": "Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.",
+            "titleSize": "small",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "badgeLabel": "BANDO DI GARA"
+          },
+          {
+            "title": "Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.",
+            "titleSize": "small",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "badgeLabel": "BANDO DI GARA"
+          }
+        ]
+      }
+    ]
   },
   {
     "slug": "musei",
     "id": "musei",
-    "categories": [
-      "Donne",
-      "Bambini",
-      "Prestatori di cura (caregivers)",
-      "Anziani",
-      "Persone con disabilità",
-      "Animali",
-      "Imprese",
-      "Cittadini stranieri"
-    ],
-    "howTo": [
-      "Prenotare una visita o un esame",
-      "Ritirare i referti",
-      "Pagare il ticket",
-      "Richiedere esenzioni dal pagamento del ticket",
-      "Cambiare/scegliere il medico di base o pediatra",
-      "Iscriversi al Sistema Sanitario Nazionale"
-    ],
-    "cards": []
+    "sections": [
+      {
+        "id": "hero",
+        "type": "hero",
+        "data": {
+          "image": "/assets/musei-hero.png",
+          "title": "Arte, storia e cultura tutte in unico Museo.",
+          "text": "Il museo di arte moderna e contemporanea della città di Roma. Esplora la storia artistica italiana dal 1900 ad oggi.",
+          "items": [
+            {
+              "label": "Palazzo Ludovisi",
+              "url": "#",
+              "image": "https://picsum.photos/720/400"
+            },
+            {
+              "label": "Giardino Botanico Margherita Hack",
+              "url": "#",
+              "image": "https://picsum.photos/720/401"
+            }
+          ],
+          "paths": [
+            { "label": "Scopri le collezioni", "url": "#" },
+            { "label": "Scopri gli artisti", "url": "#" }
+          ]
+        }
+      },
+      {
+        "id": "info",
+        "type": "info",
+        "title": "Da sapere per la tua visita",
+        "data": [
+          {
+            "title": "Orari",
+            "icon": "it-clock",
+            "items": [
+              {
+                "label": "Palazzo Ludovisi",
+                "description": "Aperto oggi dalle 9.00 alle 18.00"
+              },
+              {
+                "label": "Giardino Botanico Margherita Hack",
+                "description": "Aperto oggi dalle 9.00 alle 18.00"
+              }
+            ],
+            "goToText": "Scopri di più",
+            "goToUrl": "#"
+          },
+          {
+            "title": "Dove siamo",
+            "icon": "it-map-marker",
+            "items": [
+              {
+                "label": "Palazzo Ludovisi",
+                "description": "Via san Vito, 21, 01234, Roma (RM)"
+              },
+              {
+                "label": "Giardino Botanico Margherita Hack",
+                "description": "Via san Vito, 21, 01234, Roma (RM)"
+              }
+            ],
+            "goToText": "Scopri di più",
+            "goToUrl": "#"
+          }
+        ]
+      },
+      {
+        "id": "featured",
+        "type": "featuredCards",
+        "title": "In evidenza",
+        "data": [
+          {
+            "title": "Hayes, il pittore romantico",
+            "description": "L'esposizione racconta con un centinaio di opere il fondamentale ruolo di Torino per l'affermarsi del Liberty, un'arte che nella capitale sabauda diviene il fulcro di una storia che travolge ogni aspetto della vita e della società.",
+            "image": "https://picsum.photos/720/400",
+            "alt": "Descrizione immagine",
+            "slug": "slug",
+            "titleSize": "big",
+            "contentWidth": "50",
+            "reverseContent": true,
+            "from": "2021-01-01",
+            "to": "2021-01-01"
+          },
+          {
+            "title": "Trasmettere il pensiero di Alighiero Boetti",
+            "description": "In occasione del trentesimo anniversario della scomparsa di Alighiero Boetti, l'archivio Alighiero Boetti annuncia l'uscita di quattro nuovi progetti, editi da Agata Boetti, che mettono in luce le sfaccettature del pensiero dell'artista.",
+            "image": "https://picsum.photos/720/401",
+            "alt": "Descrizione immagine",
+            "slug": "slug",
+            "contentWidth": "50",
+            "reverseContent": true
+          },
+          {
+            "title": "Rinascimento Moderno: l'Arte Contemporanea",
+            "description": "Un viaggio attraverso il Rinascimento moderno, questa mostra esplora l'intersezione tra arte classica e contemporanea, presentando opere che reinterpretano capolavori storici con un tocco moderno e innovativo.",
+            "image": "https://picsum.photos/720/402",
+            "alt": "Descrizione immagine",
+            "slug": "slug",
+            "contentWidth": "50",
+            "reverseContent": true
+          }
+        ]
+      },
+      {
+        "id": "works",
+        "type": "works",
+        "title": "Immergiti nel museo",
+        "data": [
+          {
+            "image": "https://picsum.photos/400/400",
+            "alt": "Descrizione immagine",
+            "title": "La persistenza della memoria",
+            "author": "Salvador Dali",
+            "workDate": "2021-01-01",
+            "ratio": "1x1"
+          },
+          {
+            "image": "https://picsum.photos/402/400",
+            "alt": "Descrizione immagine",
+            "title": "La persistenza della memoria",
+            "author": "Salvador Dali",
+            "workDate": "2021-01-01",
+            "ratio": "1x1"
+          },
+          {
+            "image": "https://picsum.photos/401/400",
+            "alt": "Descrizione immagine",
+            "title": "La persistenza della memoria",
+            "author": "Salvador Dali",
+            "workDate": "2021-01-01",
+            "ratio": "1x1"
+          },
+          {
+            "image": "https://picsum.photos/401/402",
+            "alt": "Descrizione immagine",
+            "title": "La persistenza della memoria",
+            "author": "Salvador Dali",
+            "workDate": "2021-01-01",
+            "ratio": "1x1"
+          },
+          {
+            "image": "https://picsum.photos/401/401",
+            "alt": "Descrizione immagine",
+            "title": "La persistenza della memoria",
+            "author": "Salvador Dali",
+            "workDate": "2021-01-01",
+            "ratio": "1x1"
+          },
+          {
+            "image": "https://picsum.photos/403/400",
+            "alt": "Descrizione immagine",
+            "title": "La persistenza della memoria",
+            "author": "Salvador Dali",
+            "workDate": "2021-01-01",
+            "ratio": "1x1"
+          }
+        ]
+      },
+      {
+        "id": "news",
+        "type": "news",
+        "title": "Le ultime notizie del Museo",
+        "data": [
+          {
+            "title": "Inaugurazione nuova sala delle Installazioni",
+            "description": "L'inizio del restauro della tela 'Il binario' segna un momento cruciale nella conservazione del nostro patrimonio artistico. Questo affresco iconico, intriso di storia e significato, sarà riportato al suo antico splendore grazie all'abilità e alla dedizione dei nostri restauratori esperti.",
+            "image": "https://picsum.photos/720/400",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "descriptionFont": "font-serif"
+          },
+          {
+            "title": "Nuovo direttore per la sezione Archiettura urbana",
+            "description": "L'inizio del restauro della tela 'Il binario' segna un momento cruciale nella conservazione del nostro patrimonio artistico. Questo affresco iconico, intriso di storia e significato, sarà riportato al suo antico splendore grazie all'abilità e alla dedizione dei nostri restauratori esperti.",
+            "image": "https://picsum.photos/720/401",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "descriptionFont": "font-serif"
+          },
+          {
+            "title": "È iniziato il restauro della tela 'Il binario'",
+            "description": "L'inizio del restauro della tela 'Il binario' segna un momento cruciale nella conservazione del nostro patrimonio artistico. Questo affresco iconico, intriso di storia e significato, sarà riportato al suo antico splendore grazie all'abilità e alla dedizione dei nostri restauratori esperti.",
+            "image": "https://picsum.photos/720/402",
+            "alt": "Descrizione immagine",
+            "pubDate": "2021-01-01",
+            "slug": "slug",
+            "descriptionFont": "font-serif"
+          }
+        ]
+      },
+      {
+        "id": "newsletter",
+        "type": "newsletter",
+        "data": {
+          "title": "Iscriviti alla nostra newsletter",
+          "text": "Fai una donazione e diventa nostro membro",
+          "link": {
+            "label": "Scopri di più",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "cta",
+        "type": "cta",
+        "data": {
+          "image": "/assets/musei-cta.png",
+          "title": "Vuoi supportare il Museo?",
+          "text": "Fai una donazione e diventa nostro membro",
+          "link": {
+            "label": "Scopri di più",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "rating",
+        "type": "rating",
+        "data": {
+          "title": "Quanto sono chiare le informazioni su questa pagina?"
+        }
+      }
+    ]
   },
   {
     "slug": "pa",
