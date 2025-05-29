@@ -5,7 +5,12 @@ import HowToCard from "./HowToCard.astro";
 import CTA from "./CTA.astro";
 import QuickLink from "./QuickLink.astro";
 import CardHorizontal from "./CardHorizontal.astro";
+import { getCollection } from "astro:content";
 
+const homepages: any = await getCollection("homepages");
+const home = homepages.find((item: any) => item.id === "asl")?.data;
+
+console.log("home",home)
 const categories = [
   "Donne",
   "Bambini",
@@ -28,95 +33,95 @@ const howTo = [
 ---
 
 <div>
-  <h1 class="visually-hidden" id="main-container">Nome del comune</h1>
-  <section id="asl-main-content" class="py-4">
-    <h2 class="visually-hidden">In evidenza</h2>
-    <div class="container">
+  <h1 class='visually-hidden' id='main-container'>Nome del comune</h1>
+  <section id='asl-main-content' class='py-4'>
+    <h2 class='visually-hidden'>In evidenza</h2>
+    <div class='container'>
       <h2>In evidenza</h2>
-      <div class="row mt-4">
-        <div class="col-12 col-md-12 col-lg-12 mb-4">
+      <div class='row mt-4'>
+        <div class='col-12 col-md-12 col-lg-12 mb-4'>
           <CardHorizontal
-            title="Ottobre rosa, mese della prevenzione del tumore al seno"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-            image="https://picsum.photos/720/400"
-            alt="Descrizione immagine"
-            slug="slug"
-            titleSize="big"
-            contentWidth="50"
-            badgeLabel="NOTIZIA"
+            title='Ottobre rosa, mese della prevenzione del tumore al seno'
+            description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.'
+            image='https://picsum.photos/720/400'
+            alt='Descrizione immagine'
+            slug='slug'
+            titleSize='big'
+            contentWidth='50'
+            badgeLabel='NOTIZIA'
           />
         </div>
-        <div class="col-12 col-md-12 col-lg-6 mb-4">
+        <div class='col-12 col-md-12 col-lg-6 mb-4'>
           <CardHorizontal
-            title="Dal 9 ottobre sarà possibile prenotare la vaccinazione antinfluenzale"
-            image="https://picsum.photos/720/401"
-            alt="Descrizione immagine"
-            slug="slug"
-            badgeLabel="NOTIZIA"
+            title='Dal 9 ottobre sarà possibile prenotare la vaccinazione antinfluenzale'
+            image='https://picsum.photos/720/401'
+            alt='Descrizione immagine'
+            slug='slug'
+            badgeLabel='NOTIZIA'
           />
         </div>
-        <div class="col-12 col-md-12 col-lg-6 mb-4">
+        <div class='col-12 col-md-12 col-lg-6 mb-4'>
           <CardHorizontal
-            title="Denatalità, Italia al bivio: opportunità di rinascita o situazione irreversibile?"
-            image="https://picsum.photos/720/402"
-            alt="Descrizione immagine"
-            slug="slug"
-            badgeLabel="NOTIZIA"
+            title='Denatalità, Italia al bivio: opportunità di rinascita o situazione irreversibile?'
+            image='https://picsum.photos/720/402'
+            alt='Descrizione immagine'
+            slug='slug'
+            badgeLabel='NOTIZIA'
           />
         </div>
       </div>
     </div>
   </section>
-  <section id="asl-how-to" class="bg-light py-4">
-    <h2 class="visually-hidden">Servizi e prestazioni</h2>
-    <div class="container">
+  <section id='asl-how-to' class='bg-light py-4'>
+    <h2 class='visually-hidden'>Servizi e prestazioni</h2>
+    <div class='container'>
       <h2>Servizi e prestazioni</h2>
-      <p class="text-secondary fs-4 py-2">
+      <p class='text-secondary fs-4 py-2'>
         Scopri e accedi ai servizi dell'ASL come visite specialistiche, esami,
         percorsi di cura, referti e certificati
       </p>
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class='row'>
+        <div class='col-12 col-md-6 col-lg-4 mb-4'>
           <QuickLink
-            title="Visite specialistiche"
-            description="Tutte le visite specialistiche erogate dall’ASL"
+            title='Visite specialistiche'
+            description='Tutte le visite specialistiche erogate dall’ASL'
           />
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class='col-12 col-md-6 col-lg-4 mb-4'>
           <QuickLink
-            title="Visite specialistiche"
-            description="Tutti gli esami e le analisi che puoi effettuare presso l’ASL"
+            title='Visite specialistiche'
+            description='Tutti gli esami e le analisi che puoi effettuare presso l’ASL'
           />
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class='col-12 col-md-6 col-lg-4 mb-4'>
           <QuickLink
-            title="Visite specialistiche"
-            description="Servizi e prestazioni per prevenire la comparsa, la diffusione e la progressione delle malattie."
+            title='Visite specialistiche'
+            description='Servizi e prestazioni per prevenire la comparsa, la diffusione e la progressione delle malattie.'
           />
         </div>
       </div>
     </div>
   </section>
-  <section id="asl-cta">
+  <section id='asl-cta'>
     <CTA
-      image="/assets/asl-cta.png"
-      title="Come fare per"
-      text="Scopri e approfondisci tutte le procedure offerte dall’ASL"
+      image='/assets/asl-cta.png'
+      title='Come fare per'
+      text='Scopri e approfondisci tutte le procedure offerte dall’ASL'
       link={{ label: "Scopri di più", url: "#" }}
     />
   </section>
-  <section id="asl-how-to" class="bg-light py-4">
-    <h2 class="visually-hidden">Come fare per</h2>
-    <div class="container">
+  <section id='asl-how-to' class='bg-light py-4'>
+    <h2 class='visually-hidden'>Come fare per</h2>
+    <div class='container'>
       <h2>Come fare per</h2>
-      <p class="text-secondary fs-4 py-2">
+      <p class='text-secondary fs-4 py-2'>
         Scopri e approfondisci tutte le procedure offerte dall’ASL
       </p>
-      <div class="row">
+      <div class='row'>
         {
           howTo.map((c) => {
             return (
-              <div class="col-12 col-md-6 col-lg-6 mb-4">
+              <div class='col-12 col-md-6 col-lg-6 mb-4'>
                 <HowToCard title={c} />
               </div>
             );
@@ -125,18 +130,18 @@ const howTo = [
       </div>
     </div>
   </section>
-  <section id="asl-categories" class="py-4">
-    <h2 class="visually-hidden">Tutto per</h2>
-    <div class="container">
+  <section id='asl-categories' class='py-4'>
+    <h2 class='visually-hidden'>Tutto per</h2>
+    <div class='container'>
       <h2>Tutto per</h2>
-      <p class="text-secondary fs-4 py-2">
+      <p class='text-secondary fs-4 py-2'>
         Scopri i servizi, le strutture e le novità per tipologia di utente
       </p>
-      <div class="row">
+      <div class='row'>
         {
           categories.map((c) => {
             return (
-              <div class="col-12 col-md-6 col-lg-3 mb-4">
+              <div class='col-12 col-md-6 col-lg-3 mb-4'>
                 <CategoryCard title={c} />
               </div>
             );
@@ -145,96 +150,96 @@ const howTo = [
       </div>
     </div>
   </section>
-  <section id="asl-news" class="bg-light py-4">
-    <h2 class="visually-hidden">ASL comunica</h2>
-    <div class="container">
+  <section id='asl-news' class='bg-light py-4'>
+    <h2 class='visually-hidden'>ASL comunica</h2>
+    <div class='container'>
       <h2>ASL comunica</h2>
-      <p class="text-secondary fs-4 py-2">
+      <p class='text-secondary fs-4 py-2'>
         Tutte le notizie, i comunicati stampa e gli eventi dell’ASL
       </p>
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+      <div class='row'>
+        <div class='col-12 col-md-6 col-lg-4 mb-4'>
           <Card
-            title="Ottobre rosa, mese della prevenzione del tumore al seno"
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos."
-            image="https://picsum.photos/720/400"
-            alt="Descrizione immagine"
-            pubDate="2021-01-01"
-            slug="slug"
-            badgeLabel="NOTIZIA"
+            title='Ottobre rosa, mese della prevenzione del tumore al seno'
+            description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.'
+            image='https://picsum.photos/720/400'
+            alt='Descrizione immagine'
+            pubDate='2021-01-01'
+            slug='slug'
+            badgeLabel='NOTIZIA'
           />
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class='col-12 col-md-6 col-lg-4 mb-4'>
           <Card
-            title="Inquinamento atmosferisco e salute"
+            title='Inquinamento atmosferisco e salute'
             description="Studio condotto in collaborazione con la Cardiologia dell'Università di Roma"
-            image="https://picsum.photos/720/401"
-            alt="Descrizione immagine"
-            pubDate="2021-01-01"
-            slug="slug"
-            badgeLabel="NOTIZIA"
+            image='https://picsum.photos/720/401'
+            alt='Descrizione immagine'
+            pubDate='2021-01-01'
+            slug='slug'
+            badgeLabel='NOTIZIA'
           />
         </div>
-        <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class='col-12 col-md-6 col-lg-4 mb-4'>
           <Card
             title="Inaugurata nuova sala per il parto in acqua per l'Ospedale G. Rossetti"
             description="L'ASL di Roma ha inaugurato la nuova sala per il parto in acqua per l'Ospedale G. Rossetti"
-            image="https://picsum.photos/720/402"
-            alt="Descrizione immagine"
-            pubDate="2021-01-01"
-            slug="slug"
-            badgeLabel="NOTIZIA"
+            image='https://picsum.photos/720/402'
+            alt='Descrizione immagine'
+            pubDate='2021-01-01'
+            slug='slug'
+            badgeLabel='NOTIZIA'
           />
         </div>
       </div>
     </div>
   </section>
-  <section id="bandi-gara" class="bg-light py-4">
-    <h2 class="visually-hidden">Bandi di gara</h2>
-    <div class="container">
+  <section id='bandi-gara' class='bg-light py-4'>
+    <h2 class='visually-hidden'>Bandi di gara</h2>
+    <div class='container'>
       <h2>Bandi di gara</h2>
-      <p class="text-secondary fs-4 py-2">
+      <p class='text-secondary fs-4 py-2'>
         Gli ultimi bandi e concorsi attivi presso l’ASL
       </p>
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-6 mb-4">
+      <div class='row'>
+        <div class='col-12 col-md-6 col-lg-6 mb-4'>
           <Card
-            title="Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base."
-            titleSize="small"
-            alt="Descrizione immagine"
-            pubDate="2021-01-01"
-            slug="slug"
-            badgeLabel="BANDO DI GARA"
+            title='Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.'
+            titleSize='small'
+            alt='Descrizione immagine'
+            pubDate='2021-01-01'
+            slug='slug'
+            badgeLabel='BANDO DI GARA'
           />
         </div>
-        <div class="col-12 col-md-6 col-lg-6 mb-4">
+        <div class='col-12 col-md-6 col-lg-6 mb-4'>
           <Card
-            title="Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.s"
-            titleSize="small"
-            alt="Descrizione immagine"
-            pubDate="2021-01-01"
-            slug="slug"
-            badgeLabel="BANDO DI GARA"
+            title='Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.s'
+            titleSize='small'
+            alt='Descrizione immagine'
+            pubDate='2021-01-01'
+            slug='slug'
+            badgeLabel='BANDO DI GARA'
           />
         </div>
-        <div class="col-12 col-md-6 col-lg-6 mb-4">
+        <div class='col-12 col-md-6 col-lg-6 mb-4'>
           <Card
-            title="Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base."
-            titleSize="small"
-            alt="Descrizione immagine"
-            pubDate="2021-01-01"
-            slug="slug"
-            badgeLabel="BANDO DI GARA"
+            title='Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.'
+            titleSize='small'
+            alt='Descrizione immagine'
+            pubDate='2021-01-01'
+            slug='slug'
+            badgeLabel='BANDO DI GARA'
           />
         </div>
-        <div class="col-12 col-md-6 col-lg-6 mb-4">
+        <div class='col-12 col-md-6 col-lg-6 mb-4'>
           <Card
-            title="Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base."
-            titleSize="small"
-            alt="Descrizione immagine"
-            pubDate="2021-01-01"
-            slug="slug"
-            badgeLabel="BANDO DI GARA"
+            title='Pubblico concorso per titoli ed esami a n. 1 posto di Dirigente Medico di Organizzazione dei Servi Sanitari di Base.'
+            titleSize='small'
+            alt='Descrizione immagine'
+            pubDate='2021-01-01'
+            slug='slug'
+            badgeLabel='BANDO DI GARA'
           />
         </div>
       </div>

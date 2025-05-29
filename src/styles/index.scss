@@ -1,12 +1,69 @@
-// comuni
-// $primary-h:160;
-// $primary-s:100;
-// $primary-b:45;
+$primary-h: 210;
+$primary-s: 100;
+$primary-b: 70;
 
-//red
-// $primary-h: 0;
-// $primary-s: 80;
-// $primary-b: 100;
+// hsb(210, 100, 70)
+
+$primary: #0066CC;
+$primary-light: #CDE9EE;
+
+$secondary: #5d7083;
+
+$accent: #0059b2;
+$accent-darker: #183350;
+$accent-midlight: #E2CADF;
+
+$header-slim-bg-color: #0059b2;
+$color-text-primary-hover: hsl(0, 0%, 20%);
+$color-text-primary-active: hsl(0, 0%, 20%);
+$color-background-primary-lighter: hsl(0, 0%, 20%);
+
+$color-text-secondary: $secondary;
+$color-text-accent: $accent;
+$color-background-accent-darker: #0059b2;
+
+$light-bg: rgb(251 249 251);
+$card-bg: #fff;
+
+// CSS variables
+:root {
+  --bs-link-hover-color: #{$color-text-primary-hover};
+}
+
+body {
+  --bs-light-rgb: $light-bg;
+  --bs-card-bg: $card-bg;
+  --bs-primary-light: $primary-light;
+}
+
+.bg-accent-darker {
+  background-color: $color-background-accent-darker;
+}
+
+.text-accent {
+  color: $color-text-accent;
+}
+
+.icon-accent {
+  fill: $color-text-accent;
+}
+
+.border-accent-midlight {
+  border-color: $accent-midlight;
+}
+
+@mixin multiline-ellipsis($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@for $i from 1 through 10 {
+  .multiline-ellipsis-#{$i} {
+    @include multiline-ellipsis($i);
+  }
+}
 
 
 @import "bootstrap-italia/src/scss/bootstrap-italia";

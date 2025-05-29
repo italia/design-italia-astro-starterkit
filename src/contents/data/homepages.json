@@ -1,71 +1,117 @@
-{
-  "hero": {
-    "image": "/assets/interior-national-gallery-of-art-washington-dc.jpg",
-    "title": "Arte, storia e cultura tutte in unico Museo.",
-    "text": "Il museo di arte moderna e contemporanea della città di Roma. Esplora la storia artistica italiana dal 1900 ad oggi.",
-    "overlayShow": true,
-    "overlayColor": "",
-    "overlayAlpha": 5
+[
+  {
+    "slug": "asl",
+    "id": "asl",
+    "categories": [
+      "Donne",
+      "Bambini",
+      "Prestatori di cura (caregivers)",
+      "Anziani",
+      "Persone con disabilità",
+      "Animali",
+      "Imprese",
+      "Cittadini stranieri"
+    ],
+    "howTo": [
+      "Prenotare una visita o un esame",
+      "Ritirare i referti",
+      "Pagare il ticket",
+      "Richiedere esenzioni dal pagamento del ticket",
+      "Cambiare/scegliere il medico di base o pediatra",
+      "Iscriversi al Sistema Sanitario Nazionale"
+    ],
+    "cards": []
   },
-  "newsletter": {
-    "title": "Iscriviti alla nostra newsletter ",
-    "text": "Iscriviti per ricevere la nostra newsletter con tutte le novità del Museo",
-    "show": false,
-    "url": "https://mailinglist/numxxxx"
+  {
+    "slug": "musei",
+    "id": "musei",
+    "categories": [
+      "Donne",
+      "Bambini",
+      "Prestatori di cura (caregivers)",
+      "Anziani",
+      "Persone con disabilità",
+      "Animali",
+      "Imprese",
+      "Cittadini stranieri"
+    ],
+    "howTo": [
+      "Prenotare una visita o un esame",
+      "Ritirare i referti",
+      "Pagare il ticket",
+      "Richiedere esenzioni dal pagamento del ticket",
+      "Cambiare/scegliere il medico di base o pediatra",
+      "Iscriversi al Sistema Sanitario Nazionale"
+    ],
+    "cards": []
   },
-  "cta": {
-    "title": "Vuoi supportare il museo?",
-    "text": "Fai una donazione e diventa nostro membro",
-    "show": true,
-    "link": {
-      "label": "DONA ORA",
-      "external": false,
-      "url": "/project#support"
-    }
+  {
+    "slug": "pa",
+    "id": "pa",
+    "categories": [
+      "Donne",
+      "Bambini",
+      "Prestatori di cura (caregivers)",
+      "Anziani",
+      "Persone con disabilità",
+      "Animali",
+      "Imprese",
+      "Cittadini stranieri"
+    ],
+    "howTo": [
+      "Prenotare una visita o un esame",
+      "Ritirare i referti",
+      "Pagare il ticket",
+      "Richiedere esenzioni dal pagamento del ticket",
+      "Cambiare/scegliere il medico di base o pediatra",
+      "Iscriversi al Sistema Sanitario Nazionale"
+    ],
+    "cards": []
   },
-  "sections": [
-    {
-      "title": "Eventi in evidenza",
-      "type": "events"
-    },
-    {
-      "title": "Immergiti nel museo",
-      "type": "works"
-    },
-    {
-      "title": "Le ultime notizie",
-      "type": "news"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "featuredSection",
-      "inverted": false,
-      "link": {
-        "external": true,
-        "label": "/museum",
-        "url": "vedi"
-      },
-      "title": "Area Espositiva",
-      "text": "L’esposizione racconta con un centinaio di opere il fondamentale ruolo di Torino per l’affermarsi del Liberty, un’arte che nella capitale sabauda diviene il fulcro di una storia che travolge ogni aspetto della vita e della società.",
-      "image": "/assets/interior-national-gallery-of-art-washington-dc.jpg"
-    },
-    {
-      "type": "imageBlock",
-      "image": "/assets/Dc.jpg",
-      "alt": "10 mila lire"
-    },
-    {
-      "type": "featuredSection",
-      "inverted": false,
-      "link": {
-        "external": true,
-        "url": "/project",
-        "label": "leggi tutto"
-      },
-      "title": "Il progetto",
-      "text": "L’esposizione racconta con un centinaio di opere il fondamentale ruolo di Torino per l’affermarsi del Liberty, un’arte che nella capitale sabauda diviene il fulcro di una storia che travolge ogni aspetto della vita e della società.",
-      "image": "/assets/worlds-best-museums.jpg"
-    }
-  ]
-}
+  {
+    "slug": "comuni",
+    "id": "comuni",
+    "categories": [
+      "Donne",
+      "Bambini",
+      "Prestatori di cura (caregivers)",
+      "Anziani",
+      "Persone con disabilità",
+      "Animali",
+      "Imprese",
+      "Cittadini stranieri"
+    ],
+    "howTo": [
+      "Prenotare una visita o un esame",
+      "Ritirare i referti",
+      "Pagare il ticket",
+      "Richiedere esenzioni dal pagamento del ticket",
+      "Cambiare/scegliere il medico di base o pediatra",
+      "Iscriversi al Sistema Sanitario Nazionale"
+    ],
+    "cards": []
+  },
+  {
+    "slug": "scuole",
+    "id": "scuole",
+    "categories": [
+      "Donne",
+      "Bambini",
+      "Prestatori di cura (caregivers)",
+      "Anziani",
+      "Persone con disabilità",
+      "Animali",
+      "Imprese",
+      "Cittadini stranieri"
+    ],
+    "howTo": [
+      "Prenotare una visita o un esame",
+      "Ritirare i referti",
+      "Pagare il ticket",
+      "Richiedere esenzioni dal pagamento del ticket",
+      "Cambiare/scegliere il medico di base o pediatra",
+      "Iscriversi al Sistema Sanitario Nazionale"
+    ],
+    "cards": []
+  }
+]
