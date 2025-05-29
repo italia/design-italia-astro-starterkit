@@ -3,7 +3,11 @@ $primary-s: 900;
 $primary-b: 900;
 
 $primary:#7D2670;
+$primary-light: #CDE9EE;
+
 $secondary: #2F475E;
+
+$accent: #6f1662;
 $accent-darker: #46163F;
 $accent-midlight: #E2CADF;
 
@@ -11,9 +15,13 @@ $header-slim-bg-color: #262626;
 $color-text-primary-hover: hsl(0, 0%, 20%);
 $color-text-primary-active:hsl(0, 0%, 20%);
 $color-background-primary-lighter: hsl(0, 0%, 20%);
+
 $color-text-secondary: $secondary;
 $color-text-accent: $primary;
 $color-background-accent-darker: $accent-darker;
+
+$light-bg: rgb(251 249 251);
+$card-bg: #fff;
 
 // CSS variables
 :root {
@@ -21,9 +29,9 @@ $color-background-accent-darker: $accent-darker;
 }
 
 body {
-  --bs-light-rgb: 251, 249, 251;
-  --bs-card-bg: #FFFFFF;
-  --bs-primary-light: #CDE9EE;
+  --bs-light-rgb: $light-bg;
+  --bs-card-bg: $card-bg;
+  --bs-primary-light: $primary-light;
 }
 
 .bg-accent-darker {

@@ -2,17 +2,63 @@ $primary-h: 205;
 $primary-s: 35;
 $primary-b: 54;
 
+$primary: rgb(205,35,54);
+$primary-light: #CDE9EE;
+
+$secondary: #2F475E;
+
+$accent: #425766;
+$accent-darker: #425766;
+$accent-midlight: #9adcec;
+
 $header-slim-bg-color: #425766;
 $color-text-primary-hover: hsl(210, 100%, 40%);
 $color-text-primary-active: hsl(210, 100%, 40%);
 $color-background-primary-lighter: hsl(210, 100%, 40%);
+
+$color-text-secondary: $secondary;
+$color-text-accent: $primary;
+$color-background-accent-darker: $accent-darker;
+
+$light-bg: rgb(251 249 251);
+$card-bg: #fff;
 
 // CSS variables
 :root {
   --bs-link-hover-color: #{$color-text-primary-hover};
 }
 
-@import "bootstrap-italia/src/scss/bootstrap-italia";
+body {
+  --bs-light-rgb: $light-bg;
+  --bs-card-bg: $card-bg;
+  --bs-primary-light: $primary-light;
+}
 
+.bg-accent-darker {
+  background-color: $color-background-accent-darker;
+}
 
+.text-accent {
+  color: $color-text-accent;
+}
 
+.icon-accent {
+  fill: $color-text-accent;
+}
+
+.border-accent-midlight {
+  border-color: $accent-midlight;
+}
+
+@mixin multiline-ellipsis($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@for $i from 1 through 10 {
+  .multiline-ellipsis-#{$i} {
+    @include multiline-ellipsis($i);
+  }
+}
