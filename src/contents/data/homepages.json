@@ -183,7 +183,7 @@
         "id": "hero",
         "type": "hero",
         "data": {
-          "image": "/assets/musei-hero.png",
+          "backgroundImage": "/assets/musei-hero.png",
           "title": "Arte, storia e cultura tutte in unico Museo.",
           "text": "Il museo di arte moderna e contemporanea della città di Roma. Esplora la storia artistica italiana dal 1900 ad oggi.",
           "items": [
@@ -424,7 +424,179 @@
       "Cambiare/scegliere il medico di base o pediatra",
       "Iscriversi al Sistema Sanitario Nazionale"
     ],
-    "cards": []
+    "sections": [
+      {
+        "id": "hero",
+        "type": "hero",
+        "data": {
+          "image": "/assets/pa-hero-image.svg",
+          "title": "Entra in PA digitale 2026",
+          "text": "PA digitale 2026 è il punto di accesso alle risorse per la transizione digitale. Accedi alla piattaforma e attiva il profilo della tua PA. Scopri come candidare la tua amministrazione agli avvisi e richiedere i fondi.",
+          "paths": [{ "label": "Scopri di più", "url": "#" }]
+        }
+      },
+      {
+        "id": "announcement",
+        "type": "announcement",
+        "data": {
+          "title": "Avvisi pubblici",
+          "items": [
+            {
+              "expirationDate": "14/06/2025",
+              "title": "1.2 Abilitazione e facilitazione migrazione al Cloud",
+              "link": {
+                "label": "1.2 Abilitazione al Cloud - Scuole - aprile 2025",
+                "url": "#"
+              },
+              "promotedBy": "Dipartimento per la trasformazione digitale"
+            },
+            {
+              "expirationDate": "14/06/2025",
+              "title": "1.2 Abilitazione e facilitazione migrazione al Cloud",
+              "link": {
+                "label": "1.2 Abilitazione al Cloud - Scuole - aprile 2025",
+                "url": "#"
+              },
+              "promotedBy": "Dipartimento per la trasformazione digitale"
+            },
+            {
+              "expirationDate": "14/06/2025",
+              "title": "1.2 Abilitazione e facilitazione migrazione al Cloud",
+              "link": {
+                "label": "1.2 Abilitazione al Cloud - Scuole - aprile 2025",
+                "url": "#"
+              },
+              "promotedBy": "Dipartimento per la trasformazione digitale"
+            },
+            {
+              "expirationDate": "14/06/2025",
+              "title": "1.2 Abilitazione e facilitazione migrazione al Cloud",
+              "link": {
+                "label": "1.2 Abilitazione al Cloud - Scuole - aprile 2025",
+                "url": "#"
+              },
+              "promotedBy": "Dipartimento per la trasformazione digitale"
+            }
+          ]
+        }
+      },
+      {
+        "id": "news",
+        "type": "news",
+        "data": {
+          "title": "Notizie e aggiornamenti",
+          "items": [
+            {
+              "type": "Comunicazione",
+              "title": "Nuovo termine fine progetti PA digitale 2026",
+              "text": "Con il Decreto n. 39/2025-PNRR del 14 febbraio 2025 è stato sancito che tutti i progetti PA digitale 2026 debbano finire entro il 31 marzo 2026",
+              "link": {
+                "prefix": "Scopri di più",
+                "label": "Gestire le utenze",
+                "url": "#"
+              }
+            },
+            {
+              "type": "Comunicazione",
+              "title": "Nuovo termine fine progetti PA digitale 2026",
+              "text": "Con il Decreto n. 39/2025-PNRR del 14 febbraio 2025 è stato sancito che tutti i progetti PA digitale 2026 debbano finire entro il 31 marzo 2026",
+              "link": {
+                "prefix": "Scopri di più",
+                "label": "Gestire le utenze",
+                "url": "#"
+              }
+            },
+            {
+              "type": "Comunicazione",
+              "title": "Nuovo termine fine progetti PA digitale 2026",
+              "text": "Con il Decreto n. 39/2025-PNRR del 14 febbraio 2025 è stato sancito che tutti i progetti PA digitale 2026 debbano finire entro il 31 marzo 2026",
+              "link": {
+                "prefix": "Scopri di più",
+                "label": "Gestire le utenze",
+                "url": "#"
+              }
+            },
+            {
+              "type": "Comunicazione",
+              "title": "Nuovo termine fine progetti PA digitale 2026",
+              "text": "Con il Decreto n. 39/2025-PNRR del 14 febbraio 2025 è stato sancito che tutti i progetti PA digitale 2026 debbano finire entro il 31 marzo 2026",
+              "link": {
+                "prefix": "Scopri di più",
+                "label": "Gestire le utenze",
+                "url": "#"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "id": "externalLink",
+        "type": "externalLink",
+        "data": {
+          "title": "È disponibile il cruscotto di monitoraggio del Fascicolo Sanitario Elettronico",
+          "text": "Le persone autorizzate possono consultare l’avanzamento degli obiettivi PNRR per la sanità tramite gli indicatori DM 08/08/2022 per regione o provincia autonoma.",
+          "image": "/assets/pa-fse.png",
+          "link": {
+            "label": "Accedi al cruscotto",
+            "url": "#"
+          }
+        }
+      },
+      {
+        "id": "hero2",
+        "type": "hero",
+        "data": {
+          "bgColor": "light",
+          "textDark": true,
+          "tag": "Candidature",
+          "image": "/assets/pa-candidature.svg",
+          "title": "Candida la tua PA agli avvisi dedicati",
+          "text": "Partecipa agli avvisi per richiedere i finanziamenti e avviare il processo di transizione digitale.",
+          "paths": [{ "label": "Scopri di più", "url": "#" }]
+        }
+      },
+      {
+        "id": "hero3",
+        "type": "hero",
+        "data": {
+          "bgColor": "white",
+          "textDark": true,
+          "tag": "TERRITORIO",
+          "image": "/assets/pa-transformation-office.svg",
+          "title": "Transformation Office (TO) e team territoriali",
+          "text": "Per sostenere la transizione digitale dei singoli Enti, il Dipartimento per trasformazione digitale ha costituito il Transformation Office.",
+          "paths": [{ "label": "Contatta il TO", "url": "#" }]
+        }
+      },
+      {
+        "id": "hub",
+        "type": "hub",
+        "data": {
+          "bgColor": "light",
+          "textDark": true,
+          "tag": "SUPPORTO",
+          "title": "Consulta le domande frequenti o scrivici per ricevere assistenza",
+          "hubs": [
+            {
+              "title": "Domande frequenti",
+              "text": "Scopri i dettagli dell’iniziativa e consulta le risposte alle domande più frequenti",
+              "url": "#"
+            },
+            {
+              "title": "Assistenza",
+              "text": "Compila il modulo per richiedere chiarimenti e approfondire temi di interesse",
+              "url": "#"
+            },
+            {
+              "title": "Materiali e risorse",
+              "text": "Scopri gli strumenti per favorire l'implementazione delle misure",
+              "url": "#"
+            }
+          ],
+          "paths": [{ "label": "Scopri di più", "url": "#" }]
+        }
+      }
+    ]
   },
   {
     "slug": "comuni",

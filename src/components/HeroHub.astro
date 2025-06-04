@@ -1,0 +1,148 @@
+---
+const props = Astro.props;
+console.log("hero", props);
+const { title, text, paths, bgColor, backgroundImage, hubs, textDark, tag } =
+  props;
+---
+
+<style lang="scss">
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 570px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  .hero .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .hero-hub-item {
+    width: 100%;
+    background-color: white;
+    border-radius: 6px;
+    min-height: 215px;
+    padding: 2rem;
+  }
+
+  .hero-hub-item a {
+    text-decoration: none;
+  }
+
+  .hero-hub-item h4 {
+    line-height: 1.5;
+  }
+
+  .hero-hub-item a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-hub-text {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+</style>
+
+<section
+  class={`hero ${bgColor ? `bg-${bgColor}` : "bg-primary"}`}
+  style={backgroundImage
+    ? `background-image: url('${backgroundImage}');`
+    : undefined}
+>
+  <div class="container px-5 mx-5 py-5 my-5">
+    <div class="row align-items-center">
+      <div
+        class="hero-hub-content col-lg-6 col-12 offset-lg-1 p-lg-0 mt-lg-0 pr-lg-5 my-3"
+      >
+        {
+          tag && (
+            <span
+              class={`${textDark ? "text-dark" : "text-white"} col-12 col-md-10 mb-4 text-uppercase fw-semibold`}
+            >
+              {tag}
+            </span>
+          )
+        }
+        <h3 class={`${textDark ? "text-dark" : "text-white"} mb-5`}>
+          {title}
+        </h3>
+        {
+          text && (
+            <p
+              class={`${textDark ? "text-dark" : "text-white"} hero-hub-text col-12 col-md-10 mb-4`}
+            >
+              {text}
+            </p>
+          )
+        }
+      </div>
+      <div class="col-lg-10 col-12 offset-lg-1 p-lg-0 mt-lg-0 pr-lg-5">
+        {
+          hubs && (
+            <div class="d-flex flex-column flex-lg-row gap-lg-5">
+              {hubs.map((hub: { title: string; text: string; url: string }) => (
+                <div class="hero-hub-item shadow-sm mb-lg-5 mb-4">
+                  <a href={hub.url}>
+                    <h4 class="text-primary">{hub.title}</h4>
+                  </a>
+                  <span class="text-dark">{hub.text}</span>
+                </div>
+              ))}
+            </div>
+          )
+        }
+        {
+          paths && (
+            <div class="d-flex gap-4">
+              {paths.map(
+                (path: { label: string; url: string; external?: boolean }) => (
+                  <a
+                    href={path.url}
+                    class={`btn btn-lg text-accent ${textDark ? "btn-primary text-white" : "btn-white"}`}
+                    target={path.external ? "_blank" : ""}
+                  >
+                    {path.label}
+                  </a>
+                ),
+              )}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+  <!-- - overlay-->
+  <div class="bg-overlay"></div>
+</section>

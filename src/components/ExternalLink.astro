@@ -1,0 +1,88 @@
+---
+const props = Astro.props;
+console.log("external link", props);
+const { title, text, link, image } = props;
+---
+
+<style lang="scss">
+  .external-link {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .external-link h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .external-link p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .external-link .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-accent {
+    background-color: var(--bs-accent);
+    color: white;
+  }
+
+  .external-link-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 768px) {
+    .external-link-image {
+      width: auto;
+      height: 120px;
+      object-fit: cover;
+    }
+  }
+</style>
+
+<section class="external-link p-4">
+  <div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+      <div class="col-12 border border-primary p-4">
+        <div class="d-flex flex-column flex-lg-row gap-4 align-items-center">
+          {image && <img src={image} alt={title} class="external-link-image" />}
+          <div>
+            <h6>{title}</h6>
+            {text && <p class="mb-4 text-dark">{text}</p>}
+            {
+              link && (
+                <div class="d-flex align-items-center gap-2">
+                  <a
+                    href={link.url}
+                    class="fw-semibold"
+                    target={link.external ? "_blank" : ""}
+                  >
+                    {link.label}
+                  </a>
+                  <svg class="icon icon-accent icon-sm">
+                    <use href="bsi-svg/sprites.svg#it-external-link" />
+                  </svg>
+                </div>
+              )
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- - overlay-->
+  <div class="bg-overlay"></div>
+</section>
