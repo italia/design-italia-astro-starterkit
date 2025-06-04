@@ -1,0 +1,69 @@
+---
+const props = Astro.props;
+const { items, tag, title } = props;
+---
+
+<style lang="scss">
+  a:hover .news-carousel-card-link {
+    text-decoration: underline;
+  }
+
+  .news-carousel-card-title {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
+</style>
+
+<div
+  class="it-carousel-wrapper it-carousel-landscape-abstract-three-cols splide container py-5"
+  data-bs-carousel-splide
+>
+  <div class="splide__track ps-lg-3 pe-lg-3 py-4">
+    <h4 class="mb-5">{title}</h4>
+    <ul class="splide__list it-carousel-all">
+      {
+        items?.map((item: any) => (
+          <li class="splide__slide">
+            <a href={`/${item.link.url}`} class="text-decoration-none">
+              <div class="it-single-slide-wrapper">
+                <div class="card-wrapper card-space">
+                  <div class="card card-bg">
+                    <div class="card-body">
+                      {item.type && (
+                        <span class="badge bg-accent-darker text-white mb-4 text-uppercase">
+                          {item.type}
+                        </span>
+                      )}
+                      <div class="d-flex flex-column gap-3 justify-content-between h-100">
+                        <div>
+                          <h6 class="news-carousel-card-title text-dark">
+                            {item.title}
+                          </h6>
+                          <div class="mt-3">
+                            {item.text && (
+                              <p class="text-dark">
+                                {item.text}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                        <div>
+                          <p>
+                            <span class="text-dark fw-semibold">{item.link.prefix}:</span>
+                            <span class="fw-semibold text-primary news-carousel-card-link">
+                              {item.link.label}
+                            </span>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

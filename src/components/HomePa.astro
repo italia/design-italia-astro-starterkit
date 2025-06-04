@@ -1,0 +1,62 @@
+---
+import Rating from "./Rating.astro";
+import HeroCentered from "./HeroCentered.astro";
+import { getCollection } from "astro:content";
+import AnnouncementCarousel from "./AnnouncementCarousel.astro";
+import NewsCarousel from "./NewsCarousel.astro";
+import HeroHub from "./HeroHub.astro";
+import ExternalLink from "./ExternalLink.astro";
+
+const homepages: any = await getCollection("homepages");
+const home = homepages.find((item: any) => item.id === "pa")?.data;
+const sections = home.sections;
+---
+
+<div>
+  <h1 class="visually-hidden" id="main-container">Nome del comune</h1>
+  {
+    sections.map((section: any) => {
+      switch (section.type) {
+        case "hero":
+          return (
+            <section id={`pa-${section.id}`}>
+              <HeroCentered {...section.data} />
+            </section>
+          );
+
+        case "hub":
+          return (
+            <section id={`pa-${section.id}`}>
+              <HeroHub {...section.data} />
+            </section>
+          );
+
+        case "externalLink":
+          return (
+            <section id={`pa-${section.id}`}>
+              <ExternalLink {...section.data} />
+            </section>
+          );
+
+        case "announcement":
+          return (
+            <section id={`pa-${section.id}`}>
+              <AnnouncementCarousel {...section.data} />
+            </section>
+          );
+
+        case "news":
+          return (
+            <section id={`pa-${section.id}`}>
+              <NewsCarousel {...section.data} />
+            </section>
+          );
+          return (
+            <section id={`pa-${section.id}`}>
+              <Rating {...section.data} />
+            </section>
+          );
+      }
+    })
+  }
+</div>

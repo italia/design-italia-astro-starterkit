@@ -7,7 +7,8 @@ $primary-b: 70;
 $primary: #0066CC;
 $primary-light: #CDE9EE;
 
-$secondary: #5d7083;
+$secondary: #5c6f82;
+$secondary-darker: #33485C;
 
 $accent: #0059b2;
 $accent-darker: #183350;
@@ -31,17 +32,21 @@ $card-bg: #fff;
 }
 
 body {
-  --bs-light-rgb: $light-bg;
+  --bs-light-rgb: 240,246,252;
   --bs-card-bg: $card-bg;
-  --bs-primary-light: $primary-light;
+  --bs-primary-light: #CDE9EE;
 }
 
 .bg-accent-darker {
   background-color: $color-background-accent-darker;
 }
 
+.text-dark {
+  color: $secondary-darker !important;
+}
+
 .text-accent {
-  color: $color-text-accent;
+  color: $color-text-accent !important;
 }
 
 .icon-accent {

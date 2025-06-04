@@ -1,7 +1,7 @@
 ---
 const props = Astro.props;
 console.log("hero", props);
-const { title, text, paths, show, image, items } = props;
+const { title, text, paths, show, backgroundImage, items, image } = props;
 ---
 
 <style lang="scss">
@@ -56,17 +56,24 @@ const { title, text, paths, show, image, items } = props;
     height: 100%;
     object-fit: cover;
   }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
 </style>
 
 <section
   class="hero bg-primary"
-  style={image ? `background-image: url('${image}');` : undefined}
+  style={backgroundImage ? `background-image: url('${backgroundImage}');` : undefined}
 >
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
+  <div class="container px-5 mx-5">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-6">
         <h1>{title}</h1>
-        {text && <p class="col-12 col-md-5">{text}</p>}
+        {text && <p class="col-12 col-md-10">{text}</p>}
         {
           items && (
             <div class="d-flex gap-4 mt-5 mb-5">
@@ -111,6 +118,11 @@ const { title, text, paths, show, image, items } = props;
           )
         }
       </div>
+      {image && (
+        <div class="col-12 col-md-6 p-5">
+          <img src={image} alt={title} class="hero-image" />
+        </div>
+      )}
     </div>
   </div>
   <!-- - overlay-->

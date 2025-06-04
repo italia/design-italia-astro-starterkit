@@ -1,0 +1,162 @@
+---
+const props = Astro.props;
+console.log("hero", props);
+const {
+  title,
+  text,
+  paths,
+  bgColor,
+  backgroundImage,
+  image,
+  textDark,
+  tag,
+} = props;
+---
+
+<style lang="scss">
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 570px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  .hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  .hero .bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .btn-accent {
+    background-color: var(--bs-accent);
+    color: white;
+  }
+
+  .hero-item {
+    height: 80px;
+    max-width: 415px;
+  }
+
+  .hero-item-image {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .hero-centered-text {
+    font-size: 1.5rem !important;
+    line-height: 1.5;
+  }
+
+  .hero-centered-content {
+    order: 1;
+  }
+
+  .hero-centered-image {
+    order: 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero-centered-content {
+      order: 0;
+    }
+
+    .hero-centered-image {
+      order: 1;
+    }
+  }
+</style>
+
+<section
+  class={`hero ${bgColor ? `bg-${bgColor}` : "bg-primary"}`}
+  style={backgroundImage
+    ? `background-image: url('${backgroundImage}');`
+    : undefined}
+>
+  <div class="container px-5 mx-5 my-5 my-lg-0">
+    <div class="row align-items-center">
+      <div
+        class="hero-centered-content col-lg-6 col-12 offset-lg-1 p-lg-0 mt-lg-0 pr-lg-5 my-3"
+      >
+        {
+          tag && (
+            <span
+              class={`${textDark ? "text-dark" : "text-white"} col-12 col-md-10 mb-4 text-uppercase fw-semibold`}
+            >
+              {tag}
+            </span>
+          )
+        }
+        <h2 class={`${textDark ? "text-dark" : "text-white"} mb-4`}>
+          {title}
+        </h2>
+        {
+          text && (
+            <p
+              class={`${textDark ? "text-dark" : "text-white"} hero-centered-text col-12 col-md-10 mb-4`}
+            >
+              {text}
+            </p>
+          )
+        }
+        {
+          paths && (
+            <div class="d-flex gap-4">
+              {paths.map(
+                (path: { label: string; url: string; external?: boolean }) => (
+                  <a
+                    href={path.url}
+                    class={`btn btn-lg text-accent ${textDark ? "btn-primary text-white" : "btn-white"}`}
+                    target={path.external ? "_blank" : ""}
+                  >
+                    {path.label}
+                  </a>
+                ),
+              )}
+            </div>
+          )
+        }
+      </div>
+      {
+        image && (
+          <div class="hero-centered-image col-lg-5 col-12 px-xl-5 my-3">
+            <img src={image} alt={title} class="hero-image" />
+          </div>
+        )
+      }
+    </div>
+  </div>
+  <!-- - overlay-->
+  <div class="bg-overlay"></div>
+</section>
