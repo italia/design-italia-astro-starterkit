@@ -1,0 +1,168 @@
+---
+const { html } = Astro.props;
+
+interface Heading {
+  type: string;
+  title: string;
+  id: string;
+}
+
+const headings =
+  html
+    .match(/<h([2-4])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h\1>/g)
+    ?.map((heading: string) => {
+      const match = heading.match(
+        /<h([2-4])[^>]*id="([^"]*)"[^>]*>(.*?)<\/h\1>/,
+      );
+      if (match) {
+        return {
+          type: `h${match[1]}`,
+          title: match[3].trim(),
+          id: match[2],
+        };
+      }
+      return null;
+    })
+    .filter(
+      (heading: Heading | null): heading is Heading => heading !== null,
+    ) || [];
+
+// Costruisco la struttura ad albero per i titoli
+interface HeadingNode extends Heading {
+  children?: HeadingNode[];
+}
+
+function buildHeadingsTree(headings: Heading[]): HeadingNode[] {
+  const tree: HeadingNode[] = [];
+  let lastH2: HeadingNode | null = null;
+  let lastH3: HeadingNode | null = null;
+
+  for (const heading of headings) {
+    if (heading.type === 'h2') {
+      const node: HeadingNode = { ...heading, children: [] };
+      tree.push(node);
+      lastH2 = node;
+      lastH3 = null;
+    } else if (heading.type === 'h3' && lastH2) {
+      const node: HeadingNode = { ...heading, children: [] };
+      lastH2.children!.push(node);
+      lastH3 = node;
+    } else if (heading.type === 'h4' && lastH3) {
+      const node: HeadingNode = { ...heading };
+      lastH3.children!.push(node);
+    }
+  }
+  return tree;
+}
+
+const headingsTree = buildHeadingsTree(headings);
+---
+
+<style lang="scss">
+  .it-page-sections-container {
+    border-left: 1px solid #c4c4c4;
+    padding-left: 1rem;
+  }
+
+  .navbar {
+    background: #fff;
+    border: none;
+  }
+</style>
+<div class="container py-lg-5">
+  <div class="row">
+    <div class="col-12 col-lg-4">
+      <div data-bs-toggle="sticky" data-bs-stackable="true">
+        <nav
+          class="navbar it-navscroll-wrapper navbar-expand-lg it-bottom-navscroll it-right-side"
+          data-bs-navscroll=""
+        >
+          <button
+            class="custom-navbar-toggler"
+            type="button"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            data-bs-toggle="navbarcollapsible"
+            data-bs-target="#navbarNav"
+          >
+            <span class="it-list"></span>1. Introduzione
+          </button>
+          <div class="progress custom-navbar-progressbar">
+            <div
+              class="progress-bar it-navscroll-progressbar"
+              role="progressbar"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              style="width: 0%;"
+            >
+            </div>
+          </div>
+          <div class="navbar-collapsable" id="navbarNav">
+            <div class="overlay fade"></div>
+            <a class="it-back-button" href="#" role="button">
+              <svg class="icon icon-sm icon-primary align-top">
+                <use
+                  href="/bootstrap-italia/dist/svg/sprites.svg#it-chevron-left"
+                  xlink:href="/bootstrap-italia/dist/svg/sprites.svg#it-chevron-left"
+                ></use>
+              </svg>
+              <span>Indietro</span>
+            </a>
+            <div class="menu-wrapper">
+              <div class="link-list-wrapper">
+                <h3>Indice della pagina</h3>
+                <div class="progress">
+                  <div
+                    class="progress-bar it-navscroll-progressbar"
+                    role="progressbar"
+                    aria-valuenow="0"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    style="width: 0%;"
+                  >
+                  </div>
+                </div>
+                <ul class="link-list">
+                  {headingsTree.map((h2) => (
+                    <li class="nav-item">
+                      <a class="nav-link" href={`#${h2.id}`}>
+                        <span>{h2.title}</span>
+                      </a>
+                      {h2.children && h2.children.length > 0 && (
+                        <ul class="link-list">
+                          {h2.children.map((h3) => (
+                            <li class="nav-link">
+                              <a class="nav-link" href={`#${h3.id}`}>
+                                <span>{h3.title}</span>
+                              </a>
+                              {h3.children && h3.children.length > 0 && (
+                                <ul class="tertiary link-list">
+                                  {h3.children.map((h4) => (
+                                    <li class="nav-link">
+                                      <a class="nav-link" href={`#${h4.id}`}>
+                                        <span>{h4.title}</span>
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div class="col-12 col-lg-8 it-page-sections-container">
+      <Fragment set:html={html.replace(/<h([2-4])/g, '<h$1 class="it-page-section"')} />
+    </div>
+  </div>
+</div>

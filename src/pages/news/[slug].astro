@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import NavScrollContent from "../../components/NavScrollContent.astro";
+
+export async function getStaticPaths() {
+  const items = await getCollection("news");
+  return items.map((item) => {
+    let slug = item.id;
+    return {
+      params: {
+        slug,
+      },
+      props: { item },
+    };
+  });
+}
+
+const { item } = Astro.props;
+
+---
+
+<Layout>
+  <NavScrollContent html={item.rendered?.html} />
+</Layout>
