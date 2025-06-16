@@ -1,27 +1,23 @@
-$primary-h: 205;
-$primary-s: 35;
-$primary-b: 54;
+$primary-h: 248;
+$primary-s: 62;
+$primary-b: 41;
 
-$primary: rgb(205,35,54);
-$primary-light: #CDE9EE;
+$primary:#312868;
+$primary-light:#654795;
 
-$secondary: #2F475E;
+$secondary: #271a44;
+$accent: #312868;
+$accent-darker: #382055;
+$accent-midlight: #010101;
 
-$accent: #425766;
-$accent-darker: #425766;
-$accent-midlight: #9adcec;
-
-$header-slim-bg-color: #425766;
-$color-text-primary-hover: hsl(210, 100%, 40%);
-$color-text-primary-active: hsl(210, 100%, 40%);
-$color-background-primary-lighter: hsl(210, 100%, 40%);
+$header-slim-bg-color: #1a0f2f;
+$color-text-primary-hover: #382055;
+$color-text-primary-active: #382055;
+$color-background-primary-lighter: #382055;
 
 $color-text-secondary: $secondary;
-$color-text-accent: $primary;
+$color-text-accent: $accent;
 $color-background-accent-darker: $accent-darker;
-
-$light-bg: rgb(251 249 251);
-$card-bg: #fff;
 
 // CSS variables
 :root {
@@ -29,9 +25,9 @@ $card-bg: #fff;
 }
 
 body {
-  --bs-light-rgb: $light-bg;
-  --bs-card-bg: $card-bg;
-  --bs-primary-light: $primary-light;
+  --bs-light-rgb: 244, 250, 251;
+  --bs-card-bg: #eee;
+  --bs-primary-light: #cde9ee;
 }
 
 .bg-accent-darker {
@@ -50,6 +46,14 @@ body {
   border-color: $accent-midlight;
 }
 
+.it-footer-main{
+  background-color: #312868!important;
+}
+.it-footer-small-prints{
+  background-color: #1a0f2f!important;
+}
+
+
 @mixin multiline-ellipsis($lines: 3) {
   display: -webkit-box;
   -webkit-line-clamp: $lines;
@@ -62,3 +66,5 @@ body {
     @include multiline-ellipsis($i);
   }
 }
+
+@import "bootstrap-italia/src/scss/bootstrap-italia";

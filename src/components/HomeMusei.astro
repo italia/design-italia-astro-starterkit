@@ -14,7 +14,6 @@ const homepages: any = await getCollection("homepages");
 const home = homepages.find((item: any) => item.id === "musei")?.data;
 const sections = home.sections;
 ---
-
 <div>
   <h1 class="visually-hidden" id="main-container">Nome del comune</h1>
   {
