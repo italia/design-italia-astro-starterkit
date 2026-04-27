@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "astro": "5.18.1",
-    "bootstrap-italia": "2.18.0",
+    "bootstrap-italia": "2.18.1",
     "decap-cms-app": "3.12.2",
     "marked": "16.4.2",
     "prettier-plugin-astro": "0.14.1"
