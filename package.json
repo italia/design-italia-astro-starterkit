@@ -17,7 +17,7 @@
     "prettier-plugin-astro": "0.14.1"
   },
   "devDependencies": {
-    "@types/node": "22.19.17",
+    "@types/node": "24.12.2",
     "sass-embedded": "1.99.0"
   }
 }
