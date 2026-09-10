@@ -10,7 +10,7 @@
     "cms": "bunx decap-server"
   },
   "dependencies": {
-    "astro": "5.18.1",
+    "astro": "7.2.8",
     "bootstrap-italia": "2.18.3",
     "decap-cms-app": "3.16.0",
     "marked": "16.4.2",
